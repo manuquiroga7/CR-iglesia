@@ -1,0 +1,598 @@
+<title>Cristo es la Respuesta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&family=Playball&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:        #f4eed9;
+    --cream-deep:   #e9dfc0;
+    --cream-line:   #d9cca2;
+    --ink:          #2c281f;
+    --ink-soft:     #55503f;
+    --green:        #3f5a35;
+    --green-deep:   #2b3f24;
+    --green-mist:   #7c8f6c;
+    --wine:         #7a2e24;
+    --wine-deep:    #5c2119;
+    --paper-shadow: rgba(44, 40, 31, 0.14);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Karla', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  ::selection{ background:var(--wine); color:var(--cream); }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    color:var(--green-deep);
+    text-wrap:balance;
+    margin:0;
+  }
+
+  .eyebrow{
+    font-family:'Playball', cursive;
+    font-size:1.7rem;
+    color:var(--wine);
+    display:inline-block;
+    line-height:1;
+    margin-bottom:.35rem;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.85rem 1.6rem;
+    border-radius:2px;
+    font-family:'Karla', sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn:focus-visible{ outline:2px solid var(--wine); outline-offset:3px; }
+
+  .btn--solid{ background:var(--cream); color:var(--green-deep); }
+  .btn--solid:hover{ background:#fff; }
+  .btn--outline{ border-color:rgba(244,238,217,.55); color:var(--cream); }
+  .btn--outline:hover{ border-color:var(--cream); background:rgba(244,238,217,.08); }
+  .btn--wine{ background:var(--wine); color:var(--cream); }
+  .btn--wine:hover{ background:var(--wine-deep); }
+  .btn--ghost-green{ border-color:var(--green); color:var(--green-deep); }
+  .btn--ghost-green:hover{ background:var(--green); color:var(--cream); }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 3rem); }
+
+  .divider-arches{
+    display:flex;
+    line-height:0;
+    color:var(--cream);
+  }
+  .divider-arches svg{ width:100%; height:auto; display:block; }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(244,238,217,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--cream-line);
+  }
+  .site-header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:.85rem; padding-bottom:.85rem;
+  }
+  .brand{ display:flex; align-items:center; gap:.65rem; text-decoration:none; }
+  .brand-mark{ width:34px; height:34px; flex:none; }
+  .brand-name{
+    font-family:'Fraunces', serif; font-weight:500; font-size:1.02rem;
+    color:var(--green-deep); letter-spacing:.01em;
+  }
+  .brand-name em{ display:block; font-style:normal; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); font-family:'Karla',sans-serif; font-weight:600; }
+
+  nav.primary-nav{ display:flex; align-items:center; gap:clamp(.9rem, 2vw, 2rem); }
+  nav.primary-nav a{
+    text-decoration:none; font-size:.88rem; font-weight:600; color:var(--ink-soft);
+    letter-spacing:.01em; position:relative; padding:.25rem 0;
+  }
+  nav.primary-nav a:hover{ color:var(--green-deep); }
+  nav.primary-nav a.active{ color:var(--green-deep); }
+  nav.primary-nav a.active::after{
+    content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:var(--wine);
+  }
+  .nav-cta{ margin-left:.4rem; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 90% 65% at 18% -10%, rgba(124,143,108,.35), transparent 60%),
+      radial-gradient(ellipse 70% 55% at 100% 0%, rgba(122,46,36,.28), transparent 55%),
+      linear-gradient(165deg, var(--green-deep) 0%, #2f4527 42%, #26361f 100%);
+    color:var(--cream);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(244,238,217,.05) 0 2px, transparent 2px 26px);
+    opacity:.6;
+    mix-blend-mode:overlay;
+  }
+  .hero-inner{
+    position:relative; z-index:1;
+    padding:clamp(4rem,9vw,7.5rem) 0 clamp(3.5rem,7vw,5.5rem);
+    display:grid; gap:2.5rem;
+  }
+  .hero-tag{
+    font-size:.78rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+    color:#cfd9c2; display:flex; align-items:center; gap:.6rem;
+  }
+  .hero-tag::before{ content:""; width:26px; height:1px; background:var(--wine); display:inline-block; }
+  .hero h1{
+    color:var(--cream); font-size:clamp(2.5rem, 5.6vw, 4.4rem); font-weight:400; line-height:1.05;
+    max-width:18ch;
+  }
+  .hero h1 i{ font-style:italic; color:#e7c9a9; }
+  .hero p.lede{
+    max-width:46ch; font-size:1.08rem; color:#d9dfcd; margin-top:1.1rem;
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:.85rem; margin-top:.6rem; }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:2.2rem; margin-top:1rem;
+    padding-top:1.6rem; border-top:1px solid rgba(244,238,217,.18);
+  }
+  .hero-meta div{ font-size:.82rem; color:#c7cfb9; }
+  .hero-meta strong{ display:block; font-family:'Fraunces',serif; font-weight:500; font-size:1.15rem; color:var(--cream); margin-bottom:.15rem; }
+
+  /* ---------- Section scaffolding ---------- */
+  section{ position:relative; }
+  .section-pad{ padding:clamp(3.5rem, 7vw, 6rem) 0; }
+  .section-head{ max-width:640px; margin-bottom:2.6rem; }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.35rem); font-weight:400; margin-top:.4rem; }
+  .section-head p{ color:var(--ink-soft); margin-top:.7rem; font-size:1rem; max-width:52ch; }
+  .section-head.on-dark p{ color:#cfd9c2; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+
+  /* ---------- Quienes somos ---------- */
+  .about{ background:var(--cream); }
+  .about-grid{
+    display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4rem); align-items:center;
+  }
+  .about-copy p{ color:var(--ink-soft); max-width:50ch; }
+  .about-copy p + p{ margin-top:1rem; }
+  .about-figure{
+    aspect-ratio:4/5;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(122,46,36,.18), transparent 55%),
+      linear-gradient(150deg, var(--green) 0%, var(--green-deep) 100%);
+    border-radius: 200px 200px 8px 8px / 240px 240px 8px 8px;
+    position:relative;
+    box-shadow:0 24px 48px -18px var(--paper-shadow);
+  }
+  .about-figure svg{ position:absolute; inset:0; width:100%; height:100%; }
+  .about-figure figcaption{
+    position:absolute; left:1.6rem; right:1.6rem; bottom:1.6rem;
+    background:var(--cream); border-radius:2px; padding:.9rem 1.1rem;
+    font-size:.85rem; color:var(--ink-soft); box-shadow:0 10px 24px -10px rgba(0,0,0,.35);
+  }
+  .about-figure figcaption strong{ display:block; color:var(--green-deep); font-family:'Fraunces',serif; font-size:1.3rem; font-weight:500; }
+
+  /* ---------- Horarios ---------- */
+  .schedule{
+    background:var(--cream-deep);
+    border-top:1px solid var(--cream-line);
+    border-bottom:1px solid var(--cream-line);
+  }
+  .schedule-panel{
+    background:var(--green-deep); color:var(--cream);
+    border-radius:6px;
+    padding:clamp(2rem,4vw,3rem);
+    display:grid; grid-template-columns:1.1fr 1.4fr; gap:2.5rem;
+    box-shadow:0 30px 60px -24px var(--paper-shadow);
+  }
+  .schedule-intro h2{ color:var(--cream); }
+  .schedule-intro address{ font-style:normal; margin-top:1.4rem; font-size:.92rem; color:#cfd9c2; line-height:1.7; }
+  .schedule-intro address a{ text-decoration:underline; text-underline-offset:3px; color:var(--cream); }
+
+  .schedule-list{ display:grid; gap:.9rem; }
+  .schedule-row{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding:1.05rem 1.3rem;
+    background:rgba(244,238,217,.06);
+    border:1px solid rgba(244,238,217,.14);
+    border-radius:4px;
+  }
+  .schedule-row .day{ font-family:'Fraunces',serif; font-weight:500; font-size:1.15rem; }
+  .schedule-row .kind{ display:block; font-size:.76rem; color:#b9c4a8; margin-top:.2rem; letter-spacing:.02em; }
+  .schedule-row .time{ font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:#e7c9a9; }
+
+  /* ---------- Noticias ---------- */
+  .news{ background:var(--cream); }
+  .card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+  .news-card{
+    background:var(--cream-deep);
+    border:1px solid var(--cream-line);
+    border-radius:4px; overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .news-card:hover{ transform:translateY(-3px); box-shadow:0 20px 34px -20px var(--paper-shadow); }
+  .news-thumb{
+    aspect-ratio:16/10;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .news-thumb svg{ width:56%; height:56%; }
+  .news-body{ padding:1.3rem 1.4rem 1.5rem; display:flex; flex-direction:column; gap:.6rem; flex:1; }
+  .news-date{ font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--wine); font-weight:700; }
+  .news-body h3{ font-size:1.15rem; font-weight:500; line-height:1.3; }
+  .news-body p{ color:var(--ink-soft); font-size:.92rem; margin:0; flex:1; }
+  .news-link{ font-size:.85rem; font-weight:700; color:var(--green-deep); text-decoration:none; margin-top:.3rem; }
+  .news-link:hover{ text-decoration:underline; }
+
+  /* ---------- Ministerios ---------- */
+  .ministries{ background:var(--cream-deep); border-top:1px solid var(--cream-line); }
+  .min-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+  .min-card{
+    background:var(--cream);
+    border:1px solid var(--cream-line);
+    border-radius:4px;
+    padding:1.6rem 1.4rem;
+    display:flex; flex-direction:column; gap:.85rem;
+  }
+  .min-icon{
+    width:46px; height:46px; border-radius:50%;
+    background:var(--green); color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .min-icon svg{ width:22px; height:22px; }
+  .min-card h3{ font-size:1.08rem; font-weight:500; }
+  .min-card p{ color:var(--ink-soft); font-size:.88rem; margin:0; }
+
+  /* ---------- Ofrenda ---------- */
+  .giving{
+    background:
+      radial-gradient(ellipse 70% 90% at 85% 20%, rgba(244,238,217,.10), transparent 60%),
+      linear-gradient(160deg, var(--wine-deep) 0%, var(--wine) 60%, #6a2a20 100%);
+    color:var(--cream);
+  }
+  .giving-inner{
+    display:grid; grid-template-columns:1.2fr .8fr; gap:2.5rem; align-items:center;
+  }
+  .giving h2{ color:var(--cream); font-size:clamp(1.8rem,3.4vw,2.6rem); }
+  .giving p{ color:#f0ded6; max-width:46ch; margin-top:.9rem; }
+  .giving-card{
+    background:rgba(244,238,217,.08);
+    border:1px solid rgba(244,238,217,.22);
+    border-radius:6px;
+    padding:1.8rem;
+  }
+  .giving-card .verse{ font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; line-height:1.5; color:#f6ecdf; }
+  .giving-card .verse cite{ display:block; margin-top:.8rem; font-style:normal; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:#e0b9ab; }
+  .giving-card .btn{ margin-top:1.4rem; width:100%; justify-content:center; }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--green-deep); color:#cfd9c2; }
+  .footer-grid{
+    display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:2.5rem;
+    padding:clamp(2.5rem,5vw,3.5rem) 0 2rem;
+  }
+  .footer-brand .brand-name{ color:var(--cream); }
+  .footer-brand .brand-name em{ color:#a9b79a; }
+  .footer-brand p{ font-size:.86rem; color:#a9b79a; margin-top:.9rem; max-width:32ch; }
+  .footer-social{ display:flex; gap:.7rem; margin-top:1.1rem; }
+  .footer-social a{
+    width:36px; height:36px; border-radius:50%;
+    border:1px solid rgba(207,217,194,.35);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none;
+  }
+  .footer-social a:hover{ background:rgba(207,217,194,.12); }
+  .footer-social svg{ width:16px; height:16px; }
+  .footer-col h4{
+    font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:#9fb08f;
+    margin:0 0 .9rem; font-weight:700;
+  }
+  .footer-col ul{ list-style:none; margin:0; padding:0; display:grid; gap:.55rem; }
+  .footer-col a{ text-decoration:none; font-size:.9rem; color:#cfd9c2; }
+  .footer-col a:hover{ color:var(--cream); text-decoration:underline; }
+  .footer-bottom{
+    border-top:1px solid rgba(207,217,194,.15);
+    padding:1.2rem 0 1.6rem;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem;
+    font-size:.78rem; color:#8fa07f;
+  }
+
+  .badge-provisional{
+    position:fixed; right:1rem; bottom:1rem; z-index:50;
+    background:var(--ink); color:var(--cream);
+    font-size:.72rem; font-weight:600; letter-spacing:.03em;
+    padding:.55rem .9rem; border-radius:3px;
+    box-shadow:0 10px 24px -8px rgba(0,0,0,.4);
+    font-family:'Karla',sans-serif;
+  }
+
+  @media (max-width: 920px){
+    nav.primary-nav{ display:none; }
+    .about-grid, .schedule-panel, .giving-inner{ grid-template-columns:1fr; }
+    .card-grid{ grid-template-columns:1fr 1fr; }
+    .min-grid{ grid-template-columns:1fr 1fr; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 600px){
+    .card-grid, .min-grid{ grid-template-columns:1fr; }
+    .hero-meta{ gap:1.4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn, .news-card{ transition:none; }
+  }
+</style>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4V20M18 10H30" stroke="#3f5a35" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M6 40C6 40 10 26 24 26C38 26 42 40 42 40" stroke="#3f5a35" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 40H42" stroke="#3f5a35" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Cristo es la Respuesta<em>Primer Tabernáculo Cristiano</em></span>
+    </a>
+    <nav class="primary-nav">
+      <a href="#top" class="active">Inicio</a>
+      <a href="#quienes-somos">Nosotros</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#ministerios">Ministerios</a>
+      <a href="#ofrendar" class="btn btn--ghost-green nav-cta">Ofrendar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-tag">Iglesia Cristo es la Respuesta &nbsp;·&nbsp; Uruguay</div>
+      <h1>Un lugar de fe,<br><i>familia</i> y esperanza</h1>
+      <p class="lede">Una congregación que camina hace más de dos décadas anunciando la Palabra, sosteniendo familias y abriendo sus puertas a quien busca a Dios.</p>
+      <div class="hero-actions">
+        <a href="#horarios" class="btn btn--solid">Ver horarios</a>
+        <a href="#noticias" class="btn btn--outline">Últimas noticias</a>
+        <a href="#ofrendar" class="btn btn--outline">Ofrendar</a>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>Encuentros semanales</div>
+      <div><strong>+20 años</strong>De historia como comunidad</div>
+      <div><strong>Burgues 3826</strong>esq. José Batlle y Ordóñez</div>
+    </div>
+  </div>
+  <div class="divider-arches" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 60V30C60 30 60 0 120 0C180 0 180 30 240 30C300 30 300 0 360 0C420 0 420 30 480 30C540 30 540 0 600 0C660 0 660 30 720 30C780 30 780 0 840 0C900 0 900 30 960 30C1020 30 1020 0 1080 0C1140 0 1140 30 1200 30V60H0Z" fill="currentColor"/></svg>
+  </div>
+</section>
+
+<!-- ============ QUIENES SOMOS ============ -->
+<section class="about section-pad" id="quienes-somos">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Una familia reunida alrededor de la Palabra</h2>
+      <p>Cristo es la Respuesta nació de un puñado de familias que se reunían a orar en una casa, con la convicción de que el Evangelio transforma vidas, hogares y comunidades enteras.</p>
+      <p>Hoy somos una congregación diversa —jóvenes, niños, matrimonios y adultos mayores— que sostiene su vida en la enseñanza bíblica, la oración y el servicio al prójimo.</p>
+      <a href="/nosotros" class="btn btn--ghost-green" style="margin-top:.6rem;">Conocé nuestra historia →</a>
+    </div>
+    <figure class="about-figure">
+      <svg viewBox="0 0 300 300" aria-hidden="true">
+        <defs>
+          <linearGradient id="ropes" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e7c9a9" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#e7c9a9" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 210C40 190 80 195 110 175C150 150 150 90 150 40" stroke="url(#ropes)" stroke-width="2" fill="none"/>
+        <path d="M300 230C260 205 220 210 190 185C155 155 155 95 155 45" stroke="url(#ropes)" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="40" r="4" fill="#e7c9a9"/>
+      </svg>
+      <figcaption><strong>Domingo 10:00</strong>Reunión general de la congregación</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ HORARIOS ============ -->
+<section class="schedule section-pad" id="horarios">
+  <div class="wrap">
+    <div class="schedule-panel">
+      <div class="schedule-intro">
+        <span class="eyebrow">Horarios de reuniones</span>
+        <h2>Te esperamos</h2>
+        <p style="color:#cfd9c2; margin-top:.8rem;">Todos son bienvenidos, sin excepción. Estas son nuestras reuniones semanales:</p>
+        <address>
+          Burgues 3826 esq. José Batlle y Ordóñez<br>
+          Montevideo, Uruguay<br>
+          <a href="https://www.instagram.com/cristoes_larespuesta" target="_blank" rel="noopener">@cristoes_larespuesta</a>
+        </address>
+      </div>
+      <div class="schedule-list">
+        <div class="schedule-row">
+          <div><span class="day">Domingo</span><span class="kind">Reunión general</span></div>
+          <div class="time">10:00</div>
+        </div>
+        <div class="schedule-row">
+          <div><span class="day">Martes</span><span class="kind">Estudio bíblico</span></div>
+          <div class="time">20:00</div>
+        </div>
+        <div class="schedule-row">
+          <div><span class="day">Jueves</span><span class="kind">Oración y alabanza</span></div>
+          <div class="time">20:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOTICIAS ============ -->
+<section class="news section-pad" id="noticias">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Actualidad</span>
+      <h2>Últimas noticias</h2>
+      <p>Lo que está pasando en nuestra congregación.</p>
+    </div>
+    <div class="card-grid">
+      <article class="news-card">
+        <div class="news-thumb" style="background:linear-gradient(150deg,#3f5a35,#2b3f24);">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M32 6L32 30M22 14H42" stroke="#e7c9a9" stroke-width="2.2" stroke-linecap="round"/><path d="M10 52C10 52 16 34 32 34C48 34 54 52 54 52" stroke="#e7c9a9" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="news-body">
+          <span class="news-date">29 de marzo, 2026</span>
+          <h3>Convención Nacional 2026</h3>
+          <p>Un tiempo apartado para buscar la dirección de Dios y ser edificados como iglesia. "He aquí que yo hago cosa nueva" — Isaías 43:19.</p>
+          <a class="news-link" href="#">Leer más →</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb" style="background:linear-gradient(150deg,#7a2e24,#5c2119);">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M12 46V26L32 12L52 26V46" stroke="#f0ded6" stroke-width="2.2" stroke-linejoin="round"/><path d="M26 46V34H38V46" stroke="#f0ded6" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="news-body">
+          <span class="news-date">14 de febrero, 2026</span>
+          <h3>Nuevo ciclo de Escuela Bíblica</h3>
+          <p>Comienza un nuevo trimestre de formación para todas las edades, con clases los martes antes del estudio bíblico.</p>
+          <a class="news-link" href="#">Leer más →</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb" style="background:linear-gradient(150deg,#8a9a76,#3f5a35);">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="24" r="10" stroke="#f4eed9" stroke-width="2.2"/><path d="M12 52C12 40 20 34 32 34C44 34 52 40 52 52" stroke="#f4eed9" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="news-body">
+          <span class="news-date">2 de febrero, 2026</span>
+          <h3>Jornada de puertas abiertas</h3>
+          <p>Invitamos a familias del barrio a conocer nuestra comunidad con una tarde de encuentro, música y testimonios.</p>
+          <a class="news-link" href="#">Leer más →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MINISTERIOS ============ -->
+<section class="ministries section-pad" id="ministerios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cómo servimos</span>
+      <h2>Ministerios destacados</h2>
+      <p>Espacios pensados para cada etapa de la vida.</p>
+    </div>
+    <div class="min-grid">
+      <div class="min-card">
+        <div class="min-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3L14 9L20 9L15 13L17 19L12 15.5L7 19L9 13L4 9L10 9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Jóvenes</h3>
+        <p>Encuentros semanales de crecimiento, comunidad y liderazgo para adolescentes y jóvenes adultos.</p>
+      </div>
+      <div class="min-card">
+        <div class="min-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 20C5 15.6 8.1 13 12 13C15.9 13 19 15.6 19 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Niños</h3>
+        <p>Escuela dominical con clases por edades, enseñando la Palabra de forma cercana y divertida.</p>
+      </div>
+      <div class="min-card">
+        <div class="min-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V6L20 4V16" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="16" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h3>Alabanza</h3>
+        <p>El equipo de música y adoración que acompaña cada reunión y evento especial.</p>
+      </div>
+      <div class="min-card">
+        <div class="min-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 4 15.5 4 9.8C4 6.6 6.5 4.5 9.2 4.5C10.7 4.5 12 5.3 12 5.3C12 5.3 13.3 4.5 14.8 4.5C17.5 4.5 20 6.6 20 9.8C20 15.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Matrimonios</h3>
+        <p>Un espacio de consejería y comunidad para fortalecer la vida en pareja y familiar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFRENDA ============ -->
+<section class="giving section-pad" id="ofrendar">
+  <div class="wrap giving-inner">
+    <div>
+      <span class="eyebrow" style="color:#e7c9a9;">Sembrar y dar</span>
+      <h2>Apoyá con tu ofrenda</h2>
+      <p>Cada ofrenda sostiene el trabajo de la iglesia: la enseñanza, el cuidado de las familias y la ayuda a quienes más lo necesitan. Dar es también un acto de fe.</p>
+      <a href="#" class="btn btn--solid" style="margin-top:1.4rem; color:var(--wine-deep);">Ofrendar ahora</a>
+    </div>
+    <div class="giving-card">
+      <p class="verse">"Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre."<cite>2 Corintios 9:7</cite></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4V20M18 10H30" stroke="#cfd9c2" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 40C6 40 10 26 24 26C38 26 42 40 42 40" stroke="#cfd9c2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 40H42" stroke="#cfd9c2" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Cristo es la Respuesta<em>Primer Tabernáculo Cristiano</em></span>
+      </a>
+      <p>Una congregación en Uruguay que anuncia la Palabra y sirve a su comunidad desde hace más de dos décadas.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/cristoes_larespuesta" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#cfd9c2" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#cfd9c2" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="#cfd9c2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#top">Inicio</a></li>
+        <li><a href="#quienes-somos">Nosotros</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#ministerios">Ministerios</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Comunidad</h4>
+      <ul>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#ofrendar">Ofrendar</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visitanos</h4>
+      <ul>
+        <li><a href="#">Burgues 3826</a></li>
+        <li><a href="#">esq. José Batlle y Ordóñez</a></li>
+        <li><a href="#">Montevideo, Uruguay</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Cristo es la Respuesta.</span>
+    <span>Propuesta provisional de diseño — contenido de ejemplo.</span>
+  </div>
+</footer>
+
+<div class="badge-provisional">Propuesta provisional · contenido de ejemplo</div>
