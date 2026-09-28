@@ -6,9 +6,11 @@
 >
   <div class="mx-auto flex max-w-[1180px] items-center justify-between px-5 py-3 sm:px-8">
     <a href="#top" class="flex items-center gap-2.5">
-      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-cream)] p-1 shadow-sm">
-        <img src="images/branding/logo.png" alt="Cristo es la Respuesta" class="h-full w-full object-contain" />
-      </span>
+      <img
+        [src]="scrolled() ? 'images/branding/logo.png' : 'images/branding/logo-claro.png'"
+        alt="Cristo es la Respuesta"
+        class="h-9 w-9 object-contain"
+      />
       <span
         class="font-[var(--font-heading)] leading-tight transition-colors duration-300"
         [class]="scrolled() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
