@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './nav.scss',
   templateUrl: './nav.html',
 })
-export class Nav {}
+export class Nav {
+  protected readonly scrolled = signal(false);
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.scrolled.set(window.scrollY > 40);
+  }
+}

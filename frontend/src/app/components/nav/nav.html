@@ -1,23 +1,63 @@
-<header class="sticky top-0 z-40 border-b border-[var(--color-cream-line)] bg-[var(--color-cream)]/90 backdrop-blur">
+<header
+  class="fixed inset-x-0 top-0 z-40 border-b transition-colors duration-300"
+  [class]="scrolled()
+    ? 'border-[var(--color-cream-line)] bg-[var(--color-cream)]/90 backdrop-blur'
+    : 'border-transparent bg-transparent'"
+>
   <div class="mx-auto flex max-w-[1180px] items-center justify-between px-5 py-3 sm:px-8">
     <a href="#top" class="flex items-center gap-2.5">
-      <img src="images/branding/logo.png" alt="Cristo es la Respuesta" class="h-9 w-9 object-contain" />
-      <span class="font-[var(--font-heading)] leading-tight text-[var(--color-green-deep)]">
+      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-cream)] p-1 shadow-sm">
+        <img src="images/branding/logo.png" alt="Cristo es la Respuesta" class="h-full w-full object-contain" />
+      </span>
+      <span
+        class="font-[var(--font-heading)] leading-tight transition-colors duration-300"
+        [class]="scrolled() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
+      >
         <span class="block text-[1.02rem]">Cristo es la Respuesta</span>
-        <span class="block font-[var(--font-body)] text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-soft)]">
+        <span
+          class="block font-[var(--font-body)] text-[0.62rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300"
+          [class]="scrolled() ? 'text-[var(--color-ink-soft)]' : 'text-[var(--color-cream)]/75'"
+        >
           Primer Tabernáculo Cristiano
         </span>
       </span>
     </a>
 
     <nav class="hidden items-center gap-7 md:flex">
-      <a href="#top" class="relative py-1 text-sm font-semibold text-[var(--color-green-deep)] after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--color-wine)] after:content-['']">Inicio</a>
-      <a href="#quienes-somos" class="py-1 text-sm font-semibold text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]">Nosotros</a>
-      <a href="#noticias" class="py-1 text-sm font-semibold text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]">Noticias</a>
-      <a href="#ministerios" class="py-1 text-sm font-semibold text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]">Ministerios</a>
+      <a
+        href="#top"
+        class="relative py-1 text-sm font-semibold transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--color-wine)] after:content-['']"
+        [class]="scrolled() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
+      >
+        Inicio
+      </a>
+      <a
+        href="#quienes-somos"
+        class="py-1 text-sm font-semibold transition-colors duration-300"
+        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
+      >
+        Nosotros
+      </a>
+      <a
+        href="#noticias"
+        class="py-1 text-sm font-semibold transition-colors duration-300"
+        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
+      >
+        Noticias
+      </a>
+      <a
+        href="#ministerios"
+        class="py-1 text-sm font-semibold transition-colors duration-300"
+        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
+      >
+        Ministerios
+      </a>
       <a
         href="#ofrendar"
-        class="rounded-sm border-[1.5px] border-[var(--color-green)] px-5 py-2 text-sm font-semibold text-[var(--color-green-deep)] transition hover:bg-[var(--color-green)] hover:text-[var(--color-cream)]"
+        class="rounded-sm border-[1.5px] px-5 py-2 text-sm font-semibold transition-colors duration-300"
+        [class]="scrolled()
+          ? 'border-[var(--color-green)] text-[var(--color-green-deep)] hover:bg-[var(--color-green)] hover:text-[var(--color-cream)]'
+          : 'border-[var(--color-cream)]/70 text-[var(--color-cream)] hover:bg-[var(--color-cream)]/10'"
       >
         Ofrendar
       </a>
