@@ -71,8 +71,8 @@ src/app/
       presente/
   services/                 (ej. content.service.ts con datos placeholder)
   pipes/                    (si hace falta alguno)
-src/assets/images/
-  brand/                    (logo/isotipo)
+public/images/
+  branding/                 (logo/isotipo — assets estáticos sirven desde public/ en Angular CLI moderno)
   home/
   nosotros/
 ```
@@ -84,7 +84,7 @@ Cada sección de página es su propio subcomponente standalone, siguiendo el mis
 - **Paleta:** crema de fondo, verde oscuro como color primario, rojo oscuro como acento — tomados de las publicaciones reales del Instagram de la iglesia.
 - Definidos como CSS custom properties (`--color-cream`, `--color-green`, `--color-red-accent`, etc.), mapeadas en la configuración de Tailwind. Un único punto de cambio para cuando llegue el branding oficial del cliente.
 - **Tipografía:** una fuente serif/script para títulos ceremoniales (inspirada en el estilo "Horarios de Reuniones" visto en su Instagram) + una sans-serif limpia para cuerpo de texto, vía Google Fonts.
-- **Logo:** isotipo real de la cruz/tabernáculo como placeholder de marca en nav y footer.
+- **Logo:** isotipo real de la cruz/tabernáculo provisto por el cliente (`public/images/branding/logo.png`), usado en nav y footer.
 
 Se documenta explícitamente en el repo que esta paleta/tipografía/logo son un placeholder de trabajo y serán reemplazados cuando el cliente confirme el branding oficial — el diseño de theming está pensado para que ese reemplazo sea de bajo esfuerzo.
 
