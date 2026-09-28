@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+:root {
+  /* Paleta placeholder — basada en el branding real observado en @cristoes_larespuesta.
+     Reemplazar por los valores oficiales cuando el cliente confirme su branding. */
+  --color-cream: #f4eed9;
+  --color-cream-deep: #e9dfc0;
+  --color-cream-line: #d9cca2;
+  --color-ink: #2c281f;
+  --color-ink-soft: #55503f;
+  --color-green: #3f5a35;
+  --color-green-deep: #2b3f24;
+  --color-wine: #7a2e24;
+  --color-wine-deep: #5c2119;
+
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Karla", system-ui, sans-serif;
+  --font-accent: "Playball", cursive;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}

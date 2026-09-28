@@ -1,0 +1,23 @@
+<section id="ministerios" class="border-t border-[var(--color-cream-line)] bg-[var(--color-cream-deep)] py-16 sm:py-24">
+  <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
+    <div class="mb-10 max-w-[640px]">
+      <span class="mb-1 block font-[var(--font-accent)] text-3xl text-[var(--color-wine)]">Cómo servimos</span>
+      <h2 class="font-[var(--font-heading)] text-3xl text-[var(--color-green-deep)] sm:text-4xl">Ministerios destacados</h2>
+      <p class="mt-3 max-w-[52ch] text-[var(--color-ink-soft)]">Espacios pensados para cada etapa de la vida.</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (item of content.ministries; track item.name) {
+        <div class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
+          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
+            <svg viewBox="0 0 24 24" fill="none" class="h-5.5 w-5.5">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </div>
+          <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
+          <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
