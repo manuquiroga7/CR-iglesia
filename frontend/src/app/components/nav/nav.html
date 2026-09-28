@@ -6,11 +6,21 @@
 >
   <div class="mx-auto flex max-w-[1180px] items-center justify-between px-5 py-3 sm:px-8">
     <a href="#top" class="flex items-center gap-2.5">
-      <img
-        [src]="scrolled() ? 'images/branding/logo.png' : 'images/branding/logo-claro.png'"
-        alt="Cristo es la Respuesta"
-        class="h-9 w-9 object-contain"
-      />
+      <span class="relative block h-9 w-9">
+        <img
+          src="images/branding/logo-claro.png"
+          alt="Cristo es la Respuesta"
+          class="absolute inset-0 h-9 w-9 object-contain transition-opacity duration-300"
+          [class]="scrolled() ? 'opacity-0' : 'opacity-100'"
+        />
+        <img
+          src="images/branding/logo.png"
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 h-9 w-9 object-contain transition-opacity duration-300"
+          [class]="scrolled() ? 'opacity-100' : 'opacity-0'"
+        />
+      </span>
       <span
         class="font-[var(--font-heading)] leading-tight transition-colors duration-300"
         [class]="scrolled() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
