@@ -23,7 +23,12 @@
       class="relative aspect-[4/5] overflow-hidden bg-cover bg-center shadow-[0_24px_48px_-18px_rgba(44,40,31,.14)]"
       style="
         background-image: linear-gradient(0deg, rgba(28,24,18,.7), rgba(28,24,18,.7)), url('images/main-page/image-1.jpg');
-        clip-path: polygon(0 0, calc(100% - 3.5rem) 0, 100% 3.5rem, 100% 100%, 0 100%);
+        clip-path: polygon(
+          0 0.75rem, 0.22rem 0.22rem, 0.75rem 0,
+          calc(100% - 3.5rem) 0, 100% 3.5rem,
+          100% calc(100% - 0.75rem), calc(100% - 0.22rem) calc(100% - 0.22rem), calc(100% - 0.75rem) 100%,
+          0.75rem 100%, 0.22rem calc(100% - 0.22rem), 0 calc(100% - 0.75rem)
+        );
       "
     >
       <figcaption class="absolute inset-0 flex flex-col items-center justify-center px-10 text-center text-[var(--color-cream)]">
