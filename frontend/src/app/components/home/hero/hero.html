@@ -1,47 +1,130 @@
 <section
   id="top"
-  class="relative flex min-h-[88vh] flex-col overflow-hidden bg-[url('/images/hero/iglesia.png')] bg-cover bg-center text-[var(--color-cream)] [border-bottom-left-radius:50%_4rem] [border-bottom-right-radius:50%_4rem] sm:min-h-screen"
+  class="relative flex min-h-[88vh] overflow-hidden text-[var(--color-cream)] [border-bottom-left-radius:50%_4rem] [border-bottom-right-radius:50%_4rem] sm:min-h-screen"
 >
-  <div class="absolute inset-0 bg-[#2c2c28]/72"></div>
+  <div
+    class="flex w-[200%] shrink-0 transition-transform duration-700 ease-in-out"
+    [class]="current() === 0 ? 'flex w-[200%] shrink-0 transition-transform duration-700 ease-in-out [transform:translateX(0)]' : 'flex w-[200%] shrink-0 transition-transform duration-700 ease-in-out [transform:translateX(-50%)]'"
+  >
+    <!-- Slide 1: institucional -->
+    <div class="relative flex w-1/2 flex-col overflow-hidden bg-[url('/images/hero/iglesia.png')] bg-cover bg-center">
+      <div class="absolute inset-0 bg-[#2c2c28]/72"></div>
 
-  <div class="relative z-10 mx-auto grid w-full max-w-[1180px] flex-1 items-center gap-10 px-5 py-16 sm:px-8 sm:py-24">
-    <div>
-      <div class="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
-        <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
-        Iglesia Cristo es la Respuesta · Uruguay
-      </div>
-      <h1 class="max-w-[18ch] font-[var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-6xl">
-        Un lugar de fe,<br /><i class="italic text-[#e7c9a9]">familia</i> y esperanza
-      </h1>
-      <p class="mt-4 max-w-[46ch] text-lg text-[#d9dfcd]">
-        Una congregación que camina hace más de dos décadas anunciando la Palabra, sosteniendo familias y abriendo sus puertas a quien busca a Dios.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="#horarios" class="rounded-sm bg-[var(--color-cream)] px-6 py-3 text-sm font-semibold text-[var(--color-green-deep)] transition hover:bg-white">
-          Ver horarios
-        </a>
-        <a href="#noticias" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
-          Últimas noticias
-        </a>
-        <a href="#ofrendar" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
-          Ofrendar
-        </a>
+      <div class="relative z-10 mx-auto grid w-full max-w-[1180px] flex-1 items-center gap-10 px-5 py-16 sm:px-8 sm:py-24">
+        <div>
+          <div class="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
+            <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
+            Iglesia Cristo es la Respuesta · Uruguay
+          </div>
+          <h1 class="max-w-[18ch] font-[var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-6xl">
+            Un lugar de fe,<br /><i class="italic text-[#e7c9a9]">familia</i> y esperanza
+          </h1>
+          <p class="mt-4 max-w-[46ch] text-lg text-[#d9dfcd]">
+            Una congregación que camina hace más de dos décadas anunciando la Palabra, sosteniendo familias y abriendo sus puertas a quien busca a Dios.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#horarios" class="rounded-sm bg-[var(--color-cream)] px-6 py-3 text-sm font-semibold text-[var(--color-green-deep)] transition hover:bg-white">
+              Ver horarios
+            </a>
+            <a href="#noticias" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
+              Últimas noticias
+            </a>
+            <a href="#ofrendar" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
+              Ofrendar
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-9 border-t border-[var(--color-cream)]/18 pt-6">
+          <div class="text-sm text-[#c7cfb9]">
+            <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">3</strong>
+            Encuentros semanales
+          </div>
+          <div class="text-sm text-[#c7cfb9]">
+            <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">+20 años</strong>
+            De historia como comunidad
+          </div>
+          <div class="text-sm text-[#c7cfb9]">
+            <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">Burgues 3826</strong>
+            esq. José Batlle y Ordóñez
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="flex flex-wrap gap-9 border-t border-[var(--color-cream)]/18 pt-6">
-      <div class="text-sm text-[#c7cfb9]">
-        <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">3</strong>
-        Encuentros semanales
-      </div>
-      <div class="text-sm text-[#c7cfb9]">
-        <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">+20 años</strong>
-        De historia como comunidad
-      </div>
-      <div class="text-sm text-[#c7cfb9]">
-        <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">Burgues 3826</strong>
-        esq. José Batlle y Ordóñez
+    <!-- Slide 2: canal de YouTube -->
+    <div class="relative flex w-1/2 flex-col overflow-hidden bg-[url('/images/hero/iglesia.png')] bg-cover bg-center">
+      <div class="absolute inset-0 bg-[var(--color-wine-deep)]/85"></div>
+
+      <div class="relative z-10 mx-auto grid w-full max-w-[1180px] flex-1 items-center gap-10 px-5 py-16 sm:px-8 sm:py-24">
+        <div>
+          <div class="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#f0ded6]">
+            <span class="inline-block h-px w-6 bg-[var(--color-cream)]"></span>
+            Nuestro canal de YouTube
+          </div>
+          <h1 class="max-w-[20ch] font-[var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-6xl">
+            Mirá nuestros cultos <i class="italic text-[#e7c9a9]">donde estés</i>
+          </h1>
+          <p class="mt-4 max-w-[46ch] text-lg text-[#f0ded6]">
+            Prédicas, alabanza y transmisiones en vivo de La Huella Online — el canal de YouTube de Cristo es la Respuesta.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="https://www.youtube.com/@lahuellaonlinecr4464"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-sm bg-[var(--color-cream)] px-6 py-3 text-sm font-semibold text-[var(--color-wine-deep)] transition hover:bg-white"
+            >
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12Z"/></svg>
+              Ver canal
+            </a>
+            <a href="#horarios" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
+              Ver horarios
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-9 border-t border-[var(--color-cream)]/18 pt-6">
+          <div class="text-sm text-[#e6c7bc]">
+            <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">La Huella Online</strong>
+            Nuestro canal de YouTube
+          </div>
+          <div class="text-sm text-[#e6c7bc]">
+            <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">Prédicas</strong>
+            y transmisiones en vivo
+          </div>
+          <div class="text-sm text-[#e6c7bc]">
+            <strong class="mb-1 block font-[var(--font-heading)] text-lg text-[var(--color-cream)]">@lahuellaonlinecr4464</strong>
+            Suscribite y no te pierdas nada
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Controles del slider -->
+  <button
+    (click)="prev()"
+    aria-label="Slide anterior"
+    class="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--color-cream)]/40 text-[var(--color-cream)] transition hover:bg-[var(--color-cream)]/10 sm:left-6"
+  >
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button
+    (click)="next()"
+    aria-label="Slide siguiente"
+    class="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--color-cream)]/40 text-[var(--color-cream)] transition hover:bg-[var(--color-cream)]/10 sm:right-6"
+  >
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div class="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-8">
+    @for (s of slides; track s; let i = $index) {
+      <button
+        (click)="goTo(i)"
+        [attr.aria-label]="'Ir al slide ' + (i + 1)"
+        [class]="current() === i ? 'h-2 w-6 rounded-full bg-[var(--color-cream)] transition-all' : 'h-2 w-2 rounded-full bg-[var(--color-cream)]/40 transition-all hover:bg-[var(--color-cream)]/70'"
+      ></button>
+    }
   </div>
 </section>
