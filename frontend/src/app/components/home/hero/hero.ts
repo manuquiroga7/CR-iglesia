@@ -1,6 +1,6 @@
 import { Component, OnDestroy, signal } from '@angular/core';
 
-const AUTOPLAY_MS = 8000;
+const AUTOPLAY_MS = 12000;
 
 @Component({
   imports: [],
