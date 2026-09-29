@@ -20,17 +20,13 @@
     </div>
 
     <figure
-      class="relative aspect-[4/5] overflow-hidden bg-cover bg-center shadow-[0_24px_48px_-18px_rgba(44,40,31,.14)]"
-      style="
-        background-image: linear-gradient(0deg, rgba(28,24,18,.55), rgba(28,24,18,.55)), url('images/main-page/image-1.jpg');
-        clip-path: polygon(
-          0 0.75rem, 0.22rem 0.22rem, 0.75rem 0,
-          calc(100% - 3.5rem) 0, 100% 3.5rem,
-          100% calc(100% - 0.75rem), calc(100% - 0.22rem) calc(100% - 0.22rem), calc(100% - 0.75rem) 100%,
-          0.75rem 100%, 0.22rem calc(100% - 0.22rem), 0 calc(100% - 0.75rem)
-        );
-      "
+      class="relative aspect-[4/5] overflow-hidden rounded-tl-lg rounded-br-lg rounded-bl-lg bg-cover bg-center shadow-[0_24px_48px_-18px_rgba(44,40,31,.14)]"
+      style="background-image: linear-gradient(0deg, rgba(28,24,18,.55), rgba(28,24,18,.55)), url('images/main-page/image-1.jpg');"
     >
+      <div
+        class="pointer-events-none absolute right-0 top-0 h-14 w-14 bg-[var(--color-neutral)]"
+        style="clip-path: polygon(100% 0, 0 0, 100% 100%);"
+      ></div>
       <figcaption class="absolute inset-0 flex flex-col items-center justify-center px-10 text-center text-[var(--color-cream)]">
         <span class="block font-[var(--font-accent)] text-2xl text-[#e7c9a9]">Te esperamos el</span>
         <strong class="block font-[var(--font-heading)] text-3xl font-medium sm:text-4xl">Domingo 10:00</strong>
