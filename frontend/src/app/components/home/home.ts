@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Hero } from './hero/hero';
 import { QuienesSomos } from './quienes-somos/quienes-somos';
 import { Horarios } from './horarios/horarios';
+import { Video } from './video/video';
 import { NoticiasPreview } from './noticias-preview/noticias-preview';
 import { Ministerios } from './ministerios/ministerios';
 import { OfrendarCta } from './ofrendar-cta/ofrendar-cta';
 
 @Component({
-  imports: [Hero, QuienesSomos, Horarios, NoticiasPreview, Ministerios, OfrendarCta],
+  imports: [Hero, QuienesSomos, Horarios, Video, NoticiasPreview, Ministerios, OfrendarCta],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',
