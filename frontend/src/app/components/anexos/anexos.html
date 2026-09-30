@@ -15,19 +15,43 @@
   </div>
 </section>
 
-<section class="bg-[var(--color-neutral)] py-16 sm:py-24">
-  <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      @for (anexo of anexos; track anexo.nombre) {
-        <div class="rounded-md border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
-          <h3 class="font-[var(--font-heading)] text-xl text-[var(--color-green-deep)]">{{ anexo.nombre }}</h3>
-          <p class="mt-2 text-sm text-[var(--color-ink-soft)]">{{ anexo.direccion }}</p>
-          <p class="mt-1 text-sm text-[var(--color-ink-soft)]">{{ anexo.horario }}</p>
-        </div>
-      }
+@for (anexo of anexos; track anexo.nombre; let i = $index) {
+  <section
+    class="grid grid-cols-1 lg:grid-cols-2"
+    [class]="i % 2 === 0 ? '' : 'lg:[&>*:first-child]:order-2'"
+  >
+    <div
+      class="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] lg:min-h-[420px]"
+    >
+      <img src="/images/branding/logo-claro.png" alt="" aria-hidden="true" class="h-20 w-20 opacity-25" />
+      <span class="absolute bottom-5 left-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#cfd9c2]/70">
+        Foto próximamente
+      </span>
     </div>
-    <p class="mt-10 text-sm text-[var(--color-ink-soft)]">
-      Direcciones y horarios pendientes de confirmar — se completan cuando nos los envíen.
-    </p>
-  </div>
-</section>
+
+    <div
+      class="flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-16"
+      [class]="i % 2 === 0 ? 'bg-[var(--color-neutral)]' : 'bg-[var(--color-cream)]'"
+    >
+      <div class="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-wine)]">
+        <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
+        Anexo
+      </div>
+      <h3 class="font-[var(--font-heading)] text-3xl text-[var(--color-green-deep)] sm:text-4xl">
+        {{ anexo.nombre }}
+      </h3>
+      <p class="mt-4 text-sm text-[var(--color-ink-soft)]">
+        <span class="font-semibold text-[var(--color-ink)]">Dirección:</span> {{ anexo.direccion }}
+      </p>
+      <p class="mt-1 text-sm text-[var(--color-ink-soft)]">
+        <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
+      </p>
+    </div>
+  </section>
+}
+
+<div class="bg-[var(--color-neutral)] px-5 py-10 text-center sm:px-8">
+  <p class="text-sm text-[var(--color-ink-soft)]">
+    Fotos, direcciones y horarios pendientes de confirmar — se completan cuando nos los envíen.
+  </p>
+</div>
