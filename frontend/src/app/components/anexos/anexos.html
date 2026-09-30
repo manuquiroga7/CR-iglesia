@@ -40,12 +40,30 @@
       <h3 class="font-[var(--font-heading)] text-3xl text-[var(--color-green-deep)] sm:text-4xl">
         {{ anexo.nombre }}
       </h3>
-      <p class="mt-4 text-sm text-[var(--color-ink-soft)]">
-        <span class="font-semibold text-[var(--color-ink)]">Dirección:</span> {{ anexo.direccion }}
+      <p class="mt-2 text-sm text-[var(--color-ink-soft)]">
+        {{ anexo.descripcion }}
       </p>
-      <p class="mt-1 text-sm text-[var(--color-ink-soft)]">
-        <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
-      </p>
+      <div class="mt-5 flex flex-wrap items-center gap-x-8 gap-y-3">
+        <a
+          [href]="mapsUrl(anexo)"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-wine)] hover:underline"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+            <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8" />
+          </svg>
+          {{ anexo.direccion }}
+        </a>
+        <p class="text-sm text-[var(--color-ink-soft)]">
+          <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
+        </p>
+      </div>
     </div>
   </section>
 }
