@@ -38,10 +38,6 @@ export class Anexos {
     return anexo.direccion && anexo.direccion !== 'A definir' ? anexo.direccion : `${anexo.nombre}, Uruguay`;
   }
 
-  protected mapsUrl(anexo: Anexo): string {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(this.mapsQuery(anexo))}`;
-  }
-
   protected mapsEmbedUrl(anexo: Anexo): SafeResourceUrl {
     const url = `https://www.google.com/maps?q=${encodeURIComponent(this.mapsQuery(anexo))}&output=embed`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
