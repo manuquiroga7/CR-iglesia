@@ -43,25 +43,23 @@
       <p class="mt-2 text-sm text-[var(--color-ink-soft)]">
         {{ anexo.descripcion }}
       </p>
-      <div class="mt-5 flex flex-col gap-5 sm:flex-row sm:items-start">
-        <div class="flex flex-col gap-3 text-sm text-[var(--color-ink-soft)]">
-          <p>
-            <span class="font-semibold text-[var(--color-ink)]">Dirección:</span> {{ anexo.direccion }}
-          </p>
-          <p>
-            <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
-          </p>
-        </div>
+      <div class="mt-5 flex flex-col gap-3 text-sm text-[var(--color-ink-soft)]">
+        <p>
+          <span class="font-semibold text-[var(--color-ink)]">Dirección:</span> {{ anexo.direccion }}
+        </p>
+        <p>
+          <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
+        </p>
+      </div>
 
-        <div class="h-40 w-full shrink-0 overflow-hidden rounded-md border border-[var(--color-cream-line)] sm:w-56">
-          <iframe
-            [src]="mapsEmbedUrl(anexo)"
-            class="h-full w-full border-0"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación de {{ anexo.nombre }} en Google Maps"
-          ></iframe>
-        </div>
+      <div class="mt-5 h-40 w-full overflow-hidden rounded-md border border-[var(--color-cream-line)]">
+        <iframe
+          [src]="mapsEmbedUrl(anexo)"
+          class="h-full w-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de {{ anexo.nombre }} en Google Maps"
+        ></iframe>
       </div>
     </div>
   </section>
