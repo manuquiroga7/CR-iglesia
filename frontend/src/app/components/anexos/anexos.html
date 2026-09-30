@@ -18,10 +18,13 @@
 @for (anexo of anexos; track anexo.nombre; let i = $index) {
   <section
     class="grid grid-cols-1 lg:grid-cols-2"
-    [class]="(i % 2 === 0 ? '' : 'lg:[&>*:first-child]:order-2') + (i === 0 ? ' mt-10 sm:mt-16' : '')"
+    [class]="(i % 2 === 0 ? '' : 'lg:[&>*:first-child]:order-2') + (i === 0 ? ' mt-10 sm:mt-16' : '') + (i % 2 === 0 ? ' bg-[var(--color-neutral)]' : ' bg-[var(--color-cream)]')"
   >
     <div
       class="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] lg:min-h-[420px]"
+      [class]="i % 2 === 0
+        ? 'lg:[mask-image:linear-gradient(to_right,black_60%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_60%,transparent_100%)]'
+        : 'lg:[mask-image:linear-gradient(to_left,black_60%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_60%,transparent_100%)]'"
     >
       <img src="/images/branding/logo-claro.png" alt="" aria-hidden="true" class="h-20 w-20 opacity-25" />
       <span class="absolute bottom-5 left-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#cfd9c2]/70">
@@ -29,10 +32,7 @@
       </span>
     </div>
 
-    <div
-      class="flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-16"
-      [class]="i % 2 === 0 ? 'bg-[var(--color-neutral)]' : 'bg-[var(--color-cream)]'"
-    >
+    <div class="flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-16">
       <div class="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-wine)]">
         <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
         Anexo
