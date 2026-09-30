@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 interface Anexo {
   nombre: string;
@@ -14,6 +15,8 @@ interface Anexo {
   templateUrl: './anexos.html',
 })
 export class Anexos {
+  private readonly sanitizer = inject(DomSanitizer);
+
   protected readonly anexos: Anexo[] = [
     { nombre: 'Civils y Alianza', descripcion: 'Comunidad de Cristo es la Respuesta en Civils y Alianza.', direccion: 'A definir', horario: 'A definir' },
     { nombre: 'Casarino', descripcion: 'Comunidad de Cristo es la Respuesta en Casarino.', direccion: 'A definir', horario: 'A definir' },
@@ -31,8 +34,16 @@ export class Anexos {
     { nombre: 'Penino', descripcion: 'Comunidad de Cristo es la Respuesta en Penino.', direccion: 'A definir', horario: 'A definir' },
   ];
 
+  private mapsQuery(anexo: Anexo): string {
+    return anexo.direccion && anexo.direccion !== 'A definir' ? anexo.direccion : `${anexo.nombre}, Uruguay`;
+  }
+
   protected mapsUrl(anexo: Anexo): string {
-    const query = anexo.direccion && anexo.direccion !== 'A definir' ? anexo.direccion : `${anexo.nombre}, Uruguay`;
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(this.mapsQuery(anexo))}`;
+  }
+
+  protected mapsEmbedUrl(anexo: Anexo): SafeResourceUrl {
+    const url = `https://www.google.com/maps?q=${encodeURIComponent(this.mapsQuery(anexo))}&output=embed`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }

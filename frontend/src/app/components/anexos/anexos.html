@@ -43,26 +43,41 @@
       <p class="mt-2 text-sm text-[var(--color-ink-soft)]">
         {{ anexo.descripcion }}
       </p>
-      <div class="mt-5 flex flex-wrap items-center gap-x-8 gap-y-3">
-        <a
-          [href]="mapsUrl(anexo)"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-wine)] hover:underline"
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13Z"
-              stroke="currentColor"
-              stroke-width="1.8"
-            />
-            <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8" />
-          </svg>
-          {{ anexo.direccion }}
-        </a>
-        <p class="text-sm text-[var(--color-ink-soft)]">
-          <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
-        </p>
+      <div class="mt-5 flex flex-col gap-5 sm:flex-row sm:items-start">
+        <div class="flex flex-col gap-3 text-sm text-[var(--color-ink-soft)]">
+          <p>
+            <span class="font-semibold text-[var(--color-ink)]">Dirección:</span> {{ anexo.direccion }}
+          </p>
+          <p>
+            <span class="font-semibold text-[var(--color-ink)]">Horario:</span> {{ anexo.horario }}
+          </p>
+          <a
+            [href]="mapsUrl(anexo)"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-wine)] hover:underline"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+              <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+            Ver en Google Maps
+          </a>
+        </div>
+
+        <div class="h-40 w-full shrink-0 overflow-hidden rounded-md border border-[var(--color-cream-line)] sm:w-56">
+          <iframe
+            [src]="mapsEmbedUrl(anexo)"
+            class="h-full w-full border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de {{ anexo.nombre }} en Google Maps"
+          ></iframe>
+        </div>
       </div>
     </div>
   </section>
