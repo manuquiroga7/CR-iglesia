@@ -52,6 +52,24 @@ export class Content {
       excerpt:
         'Invitamos a familias del barrio a conocer nuestra comunidad con una tarde de encuentro, música y testimonios.',
     },
+    {
+      date: '18 de enero, 2026',
+      title: 'Retiro de jóvenes',
+      excerpt:
+        'Un fin de semana apartado para buscar a Dios en comunidad, con tiempos de alabanza, enseñanza y recreación.',
+    },
+    {
+      date: '5 de enero, 2026',
+      title: 'Cadena de oración de verano',
+      excerpt:
+        'Durante todo enero nos turnamos para interceder como congregación, confiando en que Dios renueva nuestras fuerzas.',
+    },
+    {
+      date: '20 de diciembre, 2025',
+      title: 'Culto de fin de año',
+      excerpt:
+        'Cerramos el año agradecidos, repasando lo que Dios hizo entre nosotros y esperando con fe lo que viene.',
+    },
   ];
 
   readonly ministries: MinistryItem[] = [

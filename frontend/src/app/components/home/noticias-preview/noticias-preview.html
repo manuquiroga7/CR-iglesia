@@ -1,13 +1,36 @@
 <section id="noticias" class="bg-[var(--color-neutral)] py-16 sm:py-24">
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
-    <div class="mb-10 max-w-[640px]">
-      <span class="mb-1 block font-[var(--font-accent)] text-3xl text-[var(--color-wine)]">Actualidad</span>
-      <h2 class="font-[var(--font-heading)] text-3xl text-[var(--color-green-deep)] sm:text-4xl">Últimas noticias</h2>
-      <p class="mt-3 max-w-[52ch] text-[var(--color-ink-soft)]">Lo que está pasando en nuestra congregación.</p>
+    <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-[640px]">
+        <span class="mb-1 block font-[var(--font-accent)] text-3xl text-[var(--color-wine)]">Actualidad</span>
+        <h2 class="font-[var(--font-heading)] text-3xl text-[var(--color-green-deep)] sm:text-4xl">Últimas noticias</h2>
+        <p class="mt-3 max-w-[52ch] text-[var(--color-ink-soft)]">Lo que está pasando en nuestra congregación.</p>
+      </div>
+
+      @if (pages().length > 1) {
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            (click)="prev()"
+            aria-label="Noticias anteriores"
+            class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[var(--color-cream-line)] text-[var(--color-green-deep)] transition hover:bg-[var(--color-cream-deep)]"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.8]"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button
+            type="button"
+            (click)="next()"
+            aria-label="Siguientes noticias"
+            class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[var(--color-cream-line)] text-[var(--color-green-deep)] transition hover:bg-[var(--color-cream-deep)]"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.8]"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      }
     </div>
 
     <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-      @for (item of content.news; track item.title) {
+      @for (item of pages()[currentPage()]; track item.title) {
         <article class="flex flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream-deep)] transition hover:-translate-y-1 hover:shadow-[0_20px_34px_-20px_rgba(44,40,31,.14)]">
           <div class="flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-[var(--color-green)] to-[var(--color-green-deep)]">
             <svg viewBox="0 0 64 64" fill="none" class="h-14 w-14">
@@ -24,5 +47,20 @@
         </article>
       }
     </div>
+
+    @if (pages().length > 1) {
+      <div class="mt-8 flex justify-center gap-2">
+        @for (page of pages(); track $index) {
+          <button
+            type="button"
+            (click)="goTo($index)"
+            [attr.aria-label]="'Ir a la página ' + ($index + 1)"
+            [class]="currentPage() === $index
+              ? 'h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all'
+              : 'h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all hover:bg-[var(--color-green)]'"
+          ></button>
+        }
+      </div>
+    }
   </div>
 </section>
