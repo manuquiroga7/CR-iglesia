@@ -8,10 +8,30 @@ const AUTOPLAY_MS = 12000;
   styleUrl: './hero.scss',
   templateUrl: './hero.html',
 })
+const SWIPE_THRESHOLD_PX = 40;
+
 export class Hero implements OnDestroy {
   protected readonly slides = [0, 1];
   protected readonly current = signal(0);
   private intervalId = setInterval(() => this.advance(), AUTOPLAY_MS);
+  private touchStartX: number | null = null;
+
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.changedTouches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    if (this.touchStartX === null) return;
+    const deltaX = event.changedTouches[0].clientX - this.touchStartX;
+    this.touchStartX = null;
+
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX) return;
+    if (deltaX < 0) {
+      this.next();
+    } else {
+      this.prev();
+    }
+  }
 
   goTo(index: number): void {
     this.current.set(index);
