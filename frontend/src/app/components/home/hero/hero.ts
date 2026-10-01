@@ -1,6 +1,7 @@
 import { Component, OnDestroy, signal } from '@angular/core';
 
 const AUTOPLAY_MS = 12000;
+const SWIPE_THRESHOLD_PX = 40;
 
 @Component({
   imports: [],
@@ -8,22 +9,20 @@ const AUTOPLAY_MS = 12000;
   styleUrl: './hero.scss',
   templateUrl: './hero.html',
 })
-const SWIPE_THRESHOLD_PX = 40;
-
 export class Hero implements OnDestroy {
   protected readonly slides = [0, 1];
   protected readonly current = signal(0);
   private intervalId = setInterval(() => this.advance(), AUTOPLAY_MS);
-  private touchStartX: number | null = null;
+  private dragStartX: number | null = null;
 
-  onTouchStart(event: TouchEvent): void {
-    this.touchStartX = event.changedTouches[0].clientX;
+  onPointerDown(event: PointerEvent): void {
+    this.dragStartX = event.clientX;
   }
 
-  onTouchEnd(event: TouchEvent): void {
-    if (this.touchStartX === null) return;
-    const deltaX = event.changedTouches[0].clientX - this.touchStartX;
-    this.touchStartX = null;
+  onPointerUp(event: PointerEvent): void {
+    if (this.dragStartX === null) return;
+    const deltaX = event.clientX - this.dragStartX;
+    this.dragStartX = null;
 
     if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX) return;
     if (deltaX < 0) {
