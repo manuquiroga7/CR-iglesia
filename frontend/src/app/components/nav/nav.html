@@ -1,6 +1,6 @@
 <header
   class="fixed inset-x-0 top-0 z-40 transition-colors duration-300"
-  [class]="scrolled()
+  [class]="scrolled() || mobileMenuOpen()
     ? 'bg-[var(--color-cream)]/90 backdrop-blur'
     : 'bg-transparent'"
 >
@@ -11,29 +11,46 @@
           src="images/branding/logo-claro.png"
           alt="Cristo es la Respuesta"
           class="absolute inset-0 h-9 w-9 object-contain transition-opacity duration-300"
-          [class]="scrolled() ? 'opacity-0' : 'opacity-100'"
+          [class]="scrolled() || mobileMenuOpen() ? 'opacity-0' : 'opacity-100'"
         />
         <img
           src="images/branding/logo.png"
           alt=""
           aria-hidden="true"
           class="absolute inset-0 h-9 w-9 object-contain transition-opacity duration-300"
-          [class]="scrolled() ? 'opacity-100' : 'opacity-0'"
+          [class]="scrolled() || mobileMenuOpen() ? 'opacity-100' : 'opacity-0'"
         />
       </span>
       <span
         class="font-[var(--font-heading)] leading-tight transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
+        [class]="scrolled() || mobileMenuOpen() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
       >
         <span class="block text-[1.02rem]">Cristo es la Respuesta</span>
         <span
           class="block font-[var(--font-body)] text-[0.62rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300"
-          [class]="scrolled() ? 'text-[var(--color-ink-soft)]' : 'text-[var(--color-cream)]/75'"
+          [class]="scrolled() || mobileMenuOpen() ? 'text-[var(--color-ink-soft)]' : 'text-[var(--color-cream)]/75'"
         >
           Primer Tabernáculo Cristiano
         </span>
       </span>
     </a>
+
+    <button
+      type="button"
+      (click)="toggleMobileMenu()"
+      class="relative flex h-9 w-9 cursor-pointer items-center justify-center md:hidden"
+      [class]="scrolled() || mobileMenuOpen() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-label="Abrir menú"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        @if (mobileMenuOpen()) {
+          <path d="M5 5l14 14M19 5L5 19" />
+        } @else {
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        }
+      </svg>
+    </button>
 
     <nav class="hidden items-center gap-7 md:flex">
       <a
@@ -82,4 +99,27 @@
       </a>
     </nav>
   </div>
+
+  @if (mobileMenuOpen()) {
+    <nav class="flex flex-col gap-1 border-t border-[var(--color-cream-line)] bg-[var(--color-cream)]/95 px-5 py-4 backdrop-blur md:hidden">
+      <a (click)="closeMobileMenu()" href="/" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-green-deep)] hover:bg-[var(--color-cream-deep)]">
+        Inicio
+      </a>
+      <a (click)="closeMobileMenu()" href="/nosotros" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
+        Nosotros
+      </a>
+      <a (click)="closeMobileMenu()" href="/anexos" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
+        Anexos
+      </a>
+      <a (click)="closeMobileMenu()" href="/#noticias" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
+        Noticias
+      </a>
+      <a (click)="closeMobileMenu()" href="/#ministerios" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
+        Ministerios
+      </a>
+      <a (click)="closeMobileMenu()" href="/ofrendar" class="mt-2 rounded-sm border-[1.5px] border-[var(--color-green)] px-2 py-2.5 text-center text-sm font-semibold text-[var(--color-green-deep)] hover:bg-[var(--color-green)] hover:text-[var(--color-cream)]">
+        Ofrendar
+      </a>
+    </nav>
+  }
 </header>
