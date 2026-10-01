@@ -6,7 +6,7 @@
       <p class="mt-3 max-w-[52ch] text-[var(--color-ink-soft)]">Lo que está pasando en nuestra congregación.</p>
     </div>
 
-    <div class="relative px-9 sm:px-16">
+    <div class="relative px-11 sm:px-24">
       <div class="overflow-hidden">
         <div
           class="flex transition-transform duration-700 ease-in-out"
@@ -40,17 +40,17 @@
           type="button"
           (click)="prev()"
           aria-label="Noticias anteriores"
-          class="absolute left-0 top-1/2 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--color-cream-line)] bg-[var(--color-neutral)] text-[var(--color-green-deep)] shadow-[0_8px_20px_-8px_rgba(44,40,31,.3)] transition [transform:translateY(-50%)] hover:bg-[var(--color-cream-deep)]"
+          class="absolute left-0 top-1/2 z-10 flex h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-green-deep)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-green-deep)]"
         >
-          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.8]"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current stroke-[1.5]"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <button
           type="button"
           (click)="next()"
           aria-label="Siguientes noticias"
-          class="absolute right-0 top-1/2 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--color-cream-line)] bg-[var(--color-neutral)] text-[var(--color-green-deep)] shadow-[0_8px_20px_-8px_rgba(44,40,31,.3)] transition [transform:translateY(-50%)] hover:bg-[var(--color-cream-deep)]"
+          class="absolute right-0 top-1/2 z-10 flex h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-green-deep)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-green-deep)]"
         >
-          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.8]"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       }
     </div>
