@@ -1,9 +1,9 @@
-import { Component, computed, DestroyRef, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { Content, NewsItem } from '../../../services/content';
+import { injectIsMobile } from '../is-mobile';
 
 const PAGE_SIZE_DESKTOP = 3;
 const PAGE_SIZE_MOBILE = 1;
-const MOBILE_QUERY = '(max-width: 639px)';
 
 @Component({
   imports: [],
@@ -14,7 +14,7 @@ const MOBILE_QUERY = '(max-width: 639px)';
 export class NoticiasPreview {
   protected readonly content = inject(Content);
 
-  private readonly isMobile = signal(false);
+  private readonly isMobile = injectIsMobile();
 
   protected readonly pages = computed<NewsItem[][]>(() => {
     const size = this.isMobile() ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP;
@@ -29,16 +29,6 @@ export class NoticiasPreview {
   protected readonly currentPage = signal(0);
 
   constructor() {
-    const mql = window.matchMedia(MOBILE_QUERY);
-    this.isMobile.set(mql.matches);
-    const update = () => this.isMobile.set(mql.matches);
-    mql.addEventListener('change', update);
-    window.addEventListener('resize', update);
-    inject(DestroyRef).onDestroy(() => {
-      mql.removeEventListener('change', update);
-      window.removeEventListener('resize', update);
-    });
-
     effect(() => {
       this.pages();
       this.currentPage.set(0);
