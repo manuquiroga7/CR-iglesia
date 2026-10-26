@@ -18,7 +18,9 @@ export class Ministerios {
 
   protected readonly pages = computed<MinistryItem[][]>(() => {
     const size = this.isMobile() ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP;
-    const items = this.content.ministries;
+    const items = this.isMobile()
+      ? this.content.ministries.filter((m) => m.featured)
+      : this.content.ministries;
     const chunks: MinistryItem[][] = [];
     for (let i = 0; i < items.length; i += size) {
       chunks.push(items.slice(i, i + size));

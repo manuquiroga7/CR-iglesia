@@ -46,24 +46,18 @@
       </button>
     </div>
 
-    @if (isMobile()) {
-      <p class="mt-6 text-center text-sm font-semibold text-[var(--color-ink-soft)]">
-        {{ currentPage() + 1 }} / {{ pages().length }}
-      </p>
-    } @else {
-      <div class="mt-8 flex justify-center gap-2">
-        @for (page of pages(); track $index) {
-          <button
-            type="button"
-            (click)="goTo($index)"
-            [attr.aria-label]="'Ir a la página ' + ($index + 1)"
-            [class]="currentPage() === $index
-              ? 'h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all'
-              : 'h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all hover:bg-[var(--color-green)]'"
-          ></button>
-        }
-      </div>
-    }
+    <div class="mt-8 flex justify-center gap-2">
+      @for (page of pages(); track $index) {
+        <button
+          type="button"
+          (click)="goTo($index)"
+          [attr.aria-label]="'Ir a la página ' + ($index + 1)"
+          [class]="currentPage() === $index
+            ? 'h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all'
+            : 'h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all hover:bg-[var(--color-green)]'"
+        ></button>
+      }
+    </div>
 
     <div class="mt-10">
       <a
