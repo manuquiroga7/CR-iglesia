@@ -15,6 +15,7 @@ export interface NewsItem {
 export interface MinistryItem {
   name: string;
   description: string;
+  featured?: boolean;
 }
 
 /**
@@ -73,9 +74,29 @@ export class Content {
   ];
 
   readonly ministries: MinistryItem[] = [
-    { name: 'Jóvenes', description: 'Encuentros semanales de crecimiento, comunidad y liderazgo para adolescentes y jóvenes adultos.' },
-    { name: 'Niños', description: 'Escuela dominical con clases por edades, enseñando la Palabra de forma cercana y divertida.' },
+    { name: 'Jóvenes', featured: true, description: 'Encuentros de crecimiento, comunidad y liderazgo para adolescentes y jóvenes.' },
+    { name: 'Niños', featured: true, description: 'Escuelita en cada anexo, enseñando la Palabra a los más chicos de forma cercana y divertida.' },
+    { name: 'Programas de YouTube', featured: true, description: 'La Huella Online: programas de voz y video que llevan la Palabra más allá de las paredes del templo.' },
+    { name: 'Evangelismo', featured: true, description: 'Salir al encuentro de quienes aún no conocen a Cristo, compartiendo el Evangelio en la comunidad.' },
     { name: 'Alabanza', description: 'El equipo de música y adoración que acompaña cada reunión y evento especial.' },
-    { name: 'Matrimonios', description: 'Un espacio de consejería y comunidad para fortalecer la vida en pareja y familiar.' },
+    { name: 'Diaconado', description: 'Servicio y cuidado práctico de la congregación y de quienes más lo necesitan.' },
+    { name: 'Pastorado', description: 'Pastoreo, acompañamiento y guía espiritual de la iglesia.' },
+    { name: 'Intercesión', description: 'Un equipo dedicado a orar por la iglesia, las familias y las necesidades de la comunidad.' },
+    { name: 'Damas', description: 'Un espacio de comunión, crecimiento y servicio para las mujeres de la congregación.' },
+    { name: 'Guardería', description: 'Cuidado de los más pequeños mientras sus padres participan de las reuniones.' },
+    { name: 'Limpieza', description: 'Mantener la casa de Dios ordenada y cuidada para recibir a todos.' },
+    { name: 'Cocina', description: 'Comida completamente gratis para quienes quieran participar de las actividades después del mediodía los domingos, luego del culto general.' },
+    { name: 'Buffet', description: 'Venta de comida a beneficio de las escuelitas.' },
+    { name: 'Discipulado', description: 'Formación y acompañamiento para crecer en la fe y en el conocimiento de la Palabra.' },
+    { name: 'Merenderos', description: 'Un plato de comida y una merienda para quienes más lo necesitan, con el amor de Cristo.' },
+    { name: 'Dorcas', description: 'Donación de ropa para familias y personas que la necesitan.' },
+    { name: 'Maestros de la Palabra', description: 'Hermanos dedicados a enseñar la Biblia en las clases y estudios de la iglesia.' },
+    { name: 'Multimedia', description: 'Producción de imagen, video y recursos audiovisuales para la iglesia.' },
+    { name: 'Redes sociales', description: 'Comunicación y presencia de la iglesia en el mundo digital.' },
+    { name: 'Controles', description: 'Control de cámaras y mezcla de la transmisión de YouTube del culto.' },
   ];
+
+  get featuredMinistries(): MinistryItem[] {
+    return this.ministries.filter((m) => m.featured);
+  }
 }
