@@ -120,4 +120,5 @@ export class Content {
   ];
 
   readonly youtubeChannelUrl = 'https://www.youtube.com/@lahuellaonlinecr4464';
+  readonly whatsappChannelUrl = 'https://whatsapp.com/channel/';
 }

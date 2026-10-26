@@ -69,5 +69,30 @@
         }
       </div>
     }
+
+    <div class="mt-12 flex flex-col items-start gap-5 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream-deep)] p-7 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-start gap-4">
+        <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5.5 w-5.5" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" />
+            <path d="M8.5 8.5c0 3 2.5 6 6 7l1.5-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">Sumate a nuestro canal de WhatsApp</h3>
+          <p class="mt-1 max-w-[52ch] text-sm text-[var(--color-ink-soft)]">
+            Recibí las novedades, los avisos y las actividades de la iglesia directamente en tu celular.
+          </p>
+        </div>
+      </div>
+      <a
+        [href]="content.whatsappChannelUrl"
+        target="_blank"
+        rel="noopener"
+        class="inline-block shrink-0 rounded-sm bg-[var(--color-green)] px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:bg-[var(--color-green-deep)]"
+      >
+        Unirme al canal →
+      </a>
+    </div>
   </div>
 </section>
