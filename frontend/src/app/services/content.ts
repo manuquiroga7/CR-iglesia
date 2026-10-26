@@ -80,7 +80,7 @@ export class Content {
     { name: 'Programas de YouTube', icon: 'youtube', featured: true, description: 'La Huella Online: programas de voz y video que llevan la Palabra más allá de las paredes del templo.' },
     { name: 'Evangelismo', icon: 'globe', featured: true, description: 'Salir al encuentro de quienes aún no conocen a Cristo, compartiendo el Evangelio en la comunidad.' },
     { name: 'Alabanza', icon: 'music', description: 'El equipo de música y adoración que acompaña cada reunión y evento especial.' },
-    { name: 'Diaconado', icon: 'heart', description: 'Servicio y cuidado práctico de la congregación y de quienes más lo necesitan.' },
+    { name: 'Diaconado', icon: 'helping', description: 'Servicio y cuidado práctico de la congregación y de quienes más lo necesitan.' },
     { name: 'Pastorado', icon: 'crook', description: 'Pastoreo, acompañamiento y guía espiritual de la iglesia.' },
     { name: 'Intercesión', icon: 'flame', description: 'Un equipo dedicado a orar por la iglesia, las familias y las necesidades de la comunidad.' },
     { name: 'Damas', icon: 'flower', description: 'Un espacio de comunión, crecimiento y servicio para las mujeres de la congregación.' },
