@@ -17,20 +17,20 @@
 
 <section class="bg-[var(--color-neutral)] py-16 sm:py-24">
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
       @for (item of content.ministries; track item.name) {
         <article class="group flex cursor-pointer flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] transition duration-200 hover:border-[var(--color-green)] hover:shadow-[0_24px_40px_-22px_rgba(44,40,31,.35)] hover:[transform:translateY(-6px)]">
           @if (item.image) {
             <img [src]="item.image" [alt]="'Foto del ministerio ' + item.name" loading="lazy" class="aspect-[16/10] w-full object-cover transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)]" />
           } @else {
             <div class="relative flex aspect-[16/10] items-center justify-center transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)] bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)]/45">
-              <app-ministry-icon [name]="item.icon" class="[&_svg]:h-14 [&_svg]:w-14" />
-              <span class="absolute bottom-3 left-4 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#cfd9c2]/70">Foto próximamente</span>
+              <app-ministry-icon [name]="item.icon" class="[&_svg]:h-9 [&_svg]:w-9 sm:[&_svg]:h-14 sm:[&_svg]:w-14" />
+              <span class="absolute bottom-2 left-3 text-[0.5rem] font-semibold uppercase tracking-[0.1em] sm:bottom-3 sm:left-4 sm:text-[0.65rem] sm:tracking-[0.14em] text-[#cfd9c2]/70">Foto próximamente</span>
             </div>
           }
-          <div class="flex flex-1 flex-col gap-2 p-6">
-            <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
-            <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
+          <div class="flex flex-1 flex-col gap-1.5 p-3.5 sm:gap-2 sm:p-6">
+            <h3 class="font-[var(--font-heading)] text-base leading-tight text-[var(--color-green-deep)] sm:text-lg">{{ item.name }}</h3>
+            <p class="text-xs text-[var(--color-ink-soft)] sm:text-sm">{{ item.description }}</p>
           </div>
         </article>
       }
