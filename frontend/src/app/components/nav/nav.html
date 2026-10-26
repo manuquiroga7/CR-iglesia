@@ -108,26 +108,29 @@
   </div>
 
   @if (mobileMenuOpen()) {
-    <nav class="flex flex-col gap-1 border-t border-[var(--color-cream-line)] bg-[var(--color-cream)]/95 px-5 py-4 backdrop-blur md:hidden">
-      <a (click)="closeMobileMenu()" href="/" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-green-deep)] hover:bg-[var(--color-cream-deep)]">
-        Inicio
-      </a>
-      <a (click)="closeMobileMenu()" href="/nosotros" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
-        Nosotros
-      </a>
-      <a (click)="closeMobileMenu()" href="/anexos" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
-        Anexos
-      </a>
-      <a (click)="closeMobileMenu()" href="/#noticias" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
-        Noticias
-      </a>
-      <a (click)="closeMobileMenu()" href="/ministerios" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
-        Ministerios
-      </a>
-      <a (click)="closeMobileMenu()" href="/la-huella" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
-        La Huella
-      </a>
-      <a (click)="closeMobileMenu()" href="/ofrendar" class="mt-2 rounded-sm border-[1.5px] border-[var(--color-green)] px-2 py-2.5 text-center text-sm font-semibold text-[var(--color-green-deep)] hover:bg-[var(--color-green)] hover:text-[var(--color-cream)]">
+    <nav class="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-[var(--color-cream-line)] px-5 pb-6 pt-2 md:hidden">
+      <ul>
+        @for (link of mobileLinks; track link.href) {
+          <li class="border-b border-[var(--color-cream-line)]/70">
+            <a
+              (click)="closeMobileMenu()"
+              [href]="link.href"
+              class="flex items-center justify-between py-4 text-base font-semibold transition-colors"
+              [class]="link.href === currentPath
+                ? 'text-[var(--color-wine)]'
+                : 'text-[var(--color-green-deep)] hover:text-[var(--color-wine)]'"
+            >
+              {{ link.label }}
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2 opacity-60" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+        }
+      </ul>
+      <a
+        (click)="closeMobileMenu()"
+        href="/ofrendar"
+        class="mt-5 block rounded-sm bg-[var(--color-green)] px-5 py-3.5 text-center text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-cream)] transition-colors hover:bg-[var(--color-green-deep)]"
+      >
         Ofrendar
       </a>
     </nav>

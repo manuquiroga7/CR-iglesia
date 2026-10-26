@@ -1,5 +1,10 @@
 import { Component, HostListener, signal } from '@angular/core';
 
+interface NavLink {
+  label: string;
+  href: string;
+}
+
 @Component({
   imports: [],
   selector: 'app-nav',
@@ -9,6 +14,17 @@ import { Component, HostListener, signal } from '@angular/core';
 export class Nav {
   protected readonly scrolled = signal(false);
   protected readonly mobileMenuOpen = signal(false);
+
+  protected readonly currentPath = window.location.pathname;
+
+  protected readonly mobileLinks: NavLink[] = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Anexos', href: '/anexos' },
+    { label: 'Noticias', href: '/#noticias' },
+    { label: 'Ministerios', href: '/ministerios' },
+    { label: 'La Huella', href: '/la-huella' },
+  ];
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
