@@ -89,6 +89,13 @@
         Ministerios
       </a>
       <a
+        href="/radio"
+        class="py-1 text-sm font-semibold transition-colors duration-300"
+        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
+      >
+        Radio
+      </a>
+      <a
         href="/ofrendar"
         class="rounded-sm border-[1.5px] px-5 py-2 text-sm font-semibold transition-colors duration-300"
         [class]="scrolled()
@@ -116,6 +123,9 @@
       </a>
       <a (click)="closeMobileMenu()" href="/ministerios" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
         Ministerios
+      </a>
+      <a (click)="closeMobileMenu()" href="/radio" class="rounded-sm px-2 py-2.5 text-sm font-semibold text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]">
+        Radio
       </a>
       <a (click)="closeMobileMenu()" href="/ofrendar" class="mt-2 rounded-sm border-[1.5px] border-[var(--color-green)] px-2 py-2.5 text-center text-sm font-semibold text-[var(--color-green-deep)] hover:bg-[var(--color-green)] hover:text-[var(--color-cream)]">
         Ofrendar

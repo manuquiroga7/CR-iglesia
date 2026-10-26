@@ -12,6 +12,12 @@ export interface NewsItem {
   excerpt: string;
 }
 
+export interface RadioProgram {
+  name: string;
+  description?: string;
+  schedule?: string;
+}
+
 export interface MinistryItem {
   name: string;
   description: string;
@@ -96,6 +102,20 @@ export class Content {
     { name: 'Redes sociales', icon: 'share', description: 'Comunicación y presencia de la iglesia en el mundo digital.' },
     { name: 'Controles', icon: 'sliders', description: 'Control de cámaras y mezcla de la transmisión de YouTube del culto.' },
   ];
+
+  readonly radioPrograms: RadioProgram[] = [
+    { name: 'En compañía del pastor', schedule: 'Todos los días · 21:00 hs', description: 'Reflexiones de reuniones con diferentes participantes, entre ellos el pastor de la congregación, Juan Sueiro.' },
+    { name: 'En compañía del pastor Teens', schedule: 'Todos los viernes', description: 'Un programa de adolescentes donde pasan un rato divertido, comparten alguna reflexión y muestran la luz del evangelio.' },
+    { name: 'Punto de quiebre', schedule: 'Todos los domingos · 17:00 hs', description: 'Un programa de jóvenes donde se tocan profundamente los temas que hoy afligen a la juventud.' },
+    { name: 'ECOS', schedule: 'Todos los miércoles · 19:30 hs', description: 'Un programa de jóvenes desestructurado y divertido, para llevar a Jesús de una manera distinta a las almas que tal vez no se animan a ir a una iglesia.' },
+    { name: 'Impartiendo vida' },
+    { name: 'La hora de predicar es ahora', schedule: 'Todos los miércoles · 22:00 hs' },
+    { name: 'Mujeres de fe', schedule: 'Martes y jueves · 16:30 hs', description: 'Un programa dedicado a las damas de la congregación.' },
+    { name: 'A sus pies' },
+    { name: 'Compartiendo su palabra', schedule: 'Todos los martes', description: 'Un programa de estudio bíblico.' },
+  ];
+
+  readonly youtubeChannelUrl = 'https://www.youtube.com/@lahuellaonlinecr4464';
 
   get featuredMinistries(): MinistryItem[] {
     return this.ministries.filter((m) => m.featured);

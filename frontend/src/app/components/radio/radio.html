@@ -1,0 +1,58 @@
+<section
+  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)] [border-bottom-left-radius:50%_3rem] [border-bottom-right-radius:50%_3rem]"
+>
+  <div class="mx-auto w-full max-w-[1180px] px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
+    <div class="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
+      <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
+      La Huella Online · "Una radio con identidad"
+    </div>
+    <h1 class="max-w-[20ch] font-[var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
+      Nuestros programas de radio
+    </h1>
+    <p class="mt-4 max-w-[52ch] text-lg text-[#d9dfcd]">
+      Programas para toda la familia, pensados para edificar, acompañar y compartir la Palabra durante la semana.
+    </p>
+  </div>
+</section>
+
+<section class="bg-[var(--color-neutral)] py-16 sm:py-24">
+  <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      @for (program of content.radioPrograms; track program.name) {
+        <article class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
+          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5.5 w-5.5" aria-hidden="true">
+              <rect x="9" y="2" width="6" height="12" rx="3" />
+              <path d="M5 11a7 7 0 0 0 14 0" />
+              <path d="M12 18v4" />
+              <path d="M8 22h8" />
+            </svg>
+          </div>
+          <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ program.name }}</h3>
+          <p class="text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-wine)]">
+            {{ program.schedule ?? 'Horario a confirmar' }}
+          </p>
+          @if (program.description) {
+            <p class="text-sm text-[var(--color-ink-soft)]">{{ program.description }}</p>
+          } @else {
+            <p class="text-sm italic text-[var(--color-ink-soft)]/70">Descripción próximamente.</p>
+          }
+        </article>
+      }
+    </div>
+
+    <div class="mt-12 flex flex-col items-start gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream-deep)] p-7 sm:flex-row sm:items-center sm:justify-between">
+      <p class="max-w-[52ch] text-[var(--color-ink-soft)]">
+        Mirá todos los programas y las transmisiones en vivo en nuestro canal de YouTube.
+      </p>
+      <a
+        [href]="content.youtubeChannelUrl"
+        target="_blank"
+        rel="noopener"
+        class="inline-block shrink-0 rounded-sm bg-[var(--color-green)] px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:bg-[var(--color-green-deep)]"
+      >
+        Ir al canal de YouTube →
+      </a>
+    </div>
+  </div>
+</section>
