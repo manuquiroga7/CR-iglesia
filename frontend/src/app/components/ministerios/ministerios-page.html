@@ -19,7 +19,7 @@
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       @for (item of content.ministries; track item.name) {
-        <article class="group flex flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] transition duration-200 hover:border-[var(--color-green)] hover:shadow-[0_24px_40px_-22px_rgba(44,40,31,.35)] hover:[transform:translateY(-6px)]">
+        <article class="group flex cursor-pointer flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] transition duration-200 hover:border-[var(--color-green)] hover:shadow-[0_24px_40px_-22px_rgba(44,40,31,.35)] hover:[transform:translateY(-6px)]">
           @if (item.image) {
             <img [src]="item.image" [alt]="'Foto del ministerio ' + item.name" loading="lazy" class="aspect-[16/10] w-full object-cover transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)]" />
           } @else {
