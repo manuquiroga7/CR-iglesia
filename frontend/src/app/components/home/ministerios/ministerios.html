@@ -6,19 +6,23 @@
       <p class="mt-3 max-w-[52ch] text-[var(--color-ink-soft)]">Lugares donde servir al Señor en su iglesia.</p>
     </div>
 
-    <div class="relative px-11 sm:px-0">
-      <div class="overflow-hidden sm:overflow-visible">
+    <div class="relative px-11 sm:px-24">
+      <div class="overflow-hidden">
         <div
-          class="flex gap-6 transition-transform duration-700 ease-in-out sm:grid sm:grid-cols-2 sm:transition-none lg:grid-cols-4"
-          [style.transform]="isMobile() ? 'translateX(calc(-' + currentIndex() + ' * (100% + 1.5rem)))' : null"
+          class="flex gap-6 transition-transform duration-700 ease-in-out"
+          [style.transform]="'translateX(calc(-' + currentPage() + ' * (100% + 1.5rem)))'"
         >
-          @for (item of content.featuredMinistries; track item.name) {
-            <div class="flex w-full shrink-0 flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6 sm:w-auto sm:shrink">
-              <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
-                <app-ministry-icon [name]="item.icon" />
-              </div>
-              <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
-              <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
+          @for (page of pages(); track $index) {
+            <div class="grid w-full shrink-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              @for (item of page; track item.name) {
+                <div class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
+                  <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
+                    <app-ministry-icon [name]="item.icon" />
+                  </div>
+                  <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
+                  <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
+                </div>
+              }
             </div>
           }
         </div>
@@ -27,33 +31,39 @@
       <button
         type="button"
         (click)="prev()"
-        aria-label="Ministerio anterior"
-        class="absolute left-0 top-1/2 z-10 flex h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-green-deep)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-green-deep)] sm:hidden"
+        aria-label="Ministerios anteriores"
+        class="absolute left-0 top-1/2 z-10 flex h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-green-deep)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-green-deep)]"
       >
         <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current stroke-[1.5]"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <button
         type="button"
         (click)="next()"
-        aria-label="Siguiente ministerio"
-        class="absolute right-0 top-1/2 z-10 flex h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-green-deep)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-green-deep)] sm:hidden"
+        aria-label="Siguientes ministerios"
+        class="absolute right-0 top-1/2 z-10 flex h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-green-deep)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-green-deep)]"
       >
         <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
 
-    <div class="mt-6 flex justify-center gap-2 sm:hidden">
-      @for (item of content.featuredMinistries; track item.name; let i = $index) {
-        <button
-          type="button"
-          (click)="goTo(i)"
-          [attr.aria-label]="'Ir al ministerio ' + (i + 1)"
-          [class]="currentIndex() === i
-            ? 'h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all'
-            : 'h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all hover:bg-[var(--color-green)]'"
-        ></button>
-      }
-    </div>
+    @if (isMobile()) {
+      <p class="mt-6 text-center text-sm font-semibold text-[var(--color-ink-soft)]">
+        {{ currentPage() + 1 }} / {{ pages().length }}
+      </p>
+    } @else {
+      <div class="mt-8 flex justify-center gap-2">
+        @for (page of pages(); track $index) {
+          <button
+            type="button"
+            (click)="goTo($index)"
+            [attr.aria-label]="'Ir a la página ' + ($index + 1)"
+            [class]="currentPage() === $index
+              ? 'h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all'
+              : 'h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all hover:bg-[var(--color-green)]'"
+          ></button>
+        }
+      </div>
+    }
 
     <div class="mt-10">
       <a

@@ -22,7 +22,6 @@ export interface MinistryItem {
   name: string;
   description: string;
   icon: string;
-  featured?: boolean;
 }
 
 /**
@@ -81,10 +80,10 @@ export class Content {
   ];
 
   readonly ministries: MinistryItem[] = [
-    { name: 'Jóvenes', icon: 'zap', featured: true, description: 'Encuentros de crecimiento, comunidad y liderazgo para adolescentes y jóvenes.' },
-    { name: 'Niños', icon: 'smile', featured: true, description: 'Escuelita en cada anexo, enseñando la Palabra a los más chicos de forma cercana y divertida.' },
-    { name: 'Programas de YouTube', icon: 'youtube', featured: true, description: 'La Huella Online: programas de voz y video que llevan la Palabra más allá de las paredes del templo.' },
-    { name: 'Evangelismo', icon: 'globe', featured: true, description: 'Salir al encuentro de quienes aún no conocen a Cristo, compartiendo el Evangelio en la comunidad.' },
+    { name: 'Jóvenes', icon: 'zap', description: 'Encuentros de crecimiento, comunidad y liderazgo para adolescentes y jóvenes.' },
+    { name: 'Niños', icon: 'smile', description: 'Escuelita en cada anexo, enseñando la Palabra a los más chicos de forma cercana y divertida.' },
+    { name: 'Programas de YouTube', icon: 'youtube', description: 'La Huella Online: programas de voz y video que llevan la Palabra más allá de las paredes del templo.' },
+    { name: 'Evangelismo', icon: 'globe', description: 'Salir al encuentro de quienes aún no conocen a Cristo, compartiendo el Evangelio en la comunidad.' },
     { name: 'Alabanza', icon: 'music', description: 'El equipo de música y adoración que acompaña cada reunión y evento especial.' },
     { name: 'Coro', icon: 'choir', description: 'El coro de la iglesia, que acompaña con su canto la adoración de la congregación.' },
     { name: 'Diaconado', icon: 'helping', description: 'Servicio y cuidado práctico de la congregación y de quienes más lo necesitan.' },
@@ -117,8 +116,4 @@ export class Content {
   ];
 
   readonly youtubeChannelUrl = 'https://www.youtube.com/@lahuellaonlinecr4464';
-
-  get featuredMinistries(): MinistryItem[] {
-    return this.ministries.filter((m) => m.featured);
-  }
 }
