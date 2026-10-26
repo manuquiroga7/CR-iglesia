@@ -9,8 +9,8 @@
     <div class="relative px-11 sm:px-24">
       <div class="overflow-hidden">
         <div
-          class="flex transition-transform duration-700 ease-in-out"
-          [style.transform]="'translateX(-' + (currentPage() * 100) + '%)'"
+          class="flex gap-7 transition-transform duration-700 ease-in-out"
+          [style.transform]="'translateX(calc(-' + currentPage() + ' * (100% + 1.75rem)))'"
         >
           @for (page of pages(); track $index) {
             <div class="grid w-full shrink-0 grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
