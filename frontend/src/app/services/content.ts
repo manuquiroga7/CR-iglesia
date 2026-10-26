@@ -86,7 +86,7 @@ export class Content {
     { name: 'Damas', icon: 'flower', description: 'Un espacio de comunión, crecimiento y servicio para las mujeres de la congregación.' },
     { name: 'Guardería', icon: 'baby', description: 'Cuidado de los más pequeños mientras sus padres participan de las reuniones.' },
     { name: 'Limpieza', icon: 'sparkles', description: 'Mantener la casa de Dios ordenada y cuidada para recibir a todos.' },
-    { name: 'Cocina', icon: 'chef', description: 'Comida completamente gratis para quienes quieran participar de las actividades después del mediodía los domingos, luego del culto general.' },
+    { name: 'Cocina', icon: 'chef', description: 'Almuerzo para quienes quieran participar de las actividades luego del culto general. Y comida para diversas actividades.' },
     { name: 'Buffet', icon: 'bag', description: 'Venta de comida a beneficio de las escuelitas.' },
     { name: 'Discipulado', icon: 'cap', description: 'Formación y acompañamiento para crecer en la fe y en el conocimiento de la Palabra.' },
     { name: 'Merenderos', icon: 'coffee', description: 'Un plato de comida y una merienda para quienes más lo necesitan, con el amor de Cristo.' },
