@@ -17,11 +17,11 @@
 
 @for (anexo of anexos; track anexo.nombre; let i = $index) {
   @if (i > 0) {
-    <div class="mx-5 mb-20 mt-6 h-[1.5px] rounded-full bg-neutral-500/40 sm:hidden" aria-hidden="true"></div>
+    <div class="mx-5 my-10 h-[1.5px] rounded-full bg-neutral-500/40 sm:hidden" aria-hidden="true"></div>
   }
   <section
     class="grid grid-cols-1 lg:grid-cols-2"
-    [class]="(i % 2 === 0 ? '' : 'lg:[&>*:first-child]:order-2') + (i === 0 ? ' mt-10 sm:mt-16' : '') + (i % 2 === 0 ? ' bg-[var(--color-neutral)]' : ' bg-[var(--color-cream)]')"
+    [class]="(i % 2 === 0 ? '' : 'lg:[&>*:first-child]:order-2') + (i === 0 ? ' mt-10 sm:mt-16' : '') + (i % 2 === 0 ? ' bg-[var(--color-cream)] sm:bg-[var(--color-neutral)]' : ' bg-[var(--color-cream)]')"
   >
     <div
       class="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] lg:min-h-[420px]"
