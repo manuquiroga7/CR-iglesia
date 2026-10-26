@@ -16,6 +16,7 @@ export interface RadioProgram {
   name: string;
   description?: string;
   schedule?: string;
+  videoId?: string;
 }
 
 export interface MinistryItem {
@@ -107,7 +108,7 @@ export class Content {
   ];
 
   readonly huellaPrograms: RadioProgram[] = [
-    { name: 'En compañía del pastor', schedule: 'Todos los días · 21:00 hs', description: 'Reflexiones de reuniones con diferentes participantes, entre ellos el pastor de la congregación, Juan Sueiro.' },
+    { name: 'En compañía del pastor', videoId: 'dYaOIYLvzCY', schedule: 'Todos los días · 21:00 hs', description: 'Reflexiones de reuniones con diferentes participantes, entre ellos el pastor de la congregación, Juan Sueiro.' },
     { name: 'En compañía del pastor Teens', schedule: 'Todos los viernes', description: 'Un programa de adolescentes donde pasan un rato divertido, comparten alguna reflexión y muestran la luz del evangelio.' },
     { name: 'Punto de quiebre', schedule: 'Todos los domingos · 17:00 hs', description: 'Un programa de jóvenes donde se tocan profundamente los temas que hoy afligen a la juventud.' },
     { name: 'ECOS', schedule: 'Todos los miércoles · 19:30 hs', description: 'Un programa de jóvenes desestructurado y divertido, para llevar a Jesús de una manera distinta a las almas que tal vez no se animan a ir a una iglesia.' },

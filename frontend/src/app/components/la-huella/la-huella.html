@@ -21,24 +21,50 @@
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       @for (program of content.huellaPrograms; track program.name) {
-        <article class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
-          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5.5 w-5.5" aria-hidden="true">
-              <rect x="9" y="2" width="6" height="12" rx="3" />
-              <path d="M5 11a7 7 0 0 0 14 0" />
-              <path d="M12 18v4" />
-              <path d="M8 22h8" />
-            </svg>
-          </div>
-          <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ program.name }}</h3>
-          <p class="text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-wine)]">
-            {{ program.schedule ?? 'Horario a confirmar' }}
-          </p>
-          @if (program.description) {
-            <p class="text-sm text-[var(--color-ink-soft)]">{{ program.description }}</p>
+        <article class="group flex flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] transition duration-200 hover:border-[var(--color-green)] hover:shadow-[0_24px_40px_-22px_rgba(44,40,31,.35)] hover:[transform:translateY(-6px)]">
+          @if (program.videoId) {
+            <a
+              [href]="'https://www.youtube.com/watch?v=' + program.videoId"
+              target="_blank"
+              rel="noopener"
+              [attr.aria-label]="'Ver ' + program.name + ' en YouTube'"
+              class="relative block aspect-[16/10] cursor-pointer overflow-hidden"
+            >
+              <img
+                [src]="'https://img.youtube.com/vi/' + program.videoId + '/hqdefault.jpg'"
+                [alt]="'Miniatura de ' + program.name"
+                loading="lazy"
+                class="h-full w-full object-cover transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)]"
+              />
+              <span class="absolute inset-0 bg-black/25 transition duration-200 group-hover:bg-black/10"></span>
+              <span class="absolute inset-0 flex items-center justify-center">
+                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-cream)] shadow-lg">
+                  <svg viewBox="0 0 24 24" class="ml-1 h-6 w-6 fill-[var(--color-green-deep)]"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </span>
+            </a>
           } @else {
-            <p class="text-sm italic text-[var(--color-ink-soft)]/70">Descripción próximamente.</p>
+            <div class="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)]/45">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-14 w-14" aria-hidden="true">
+                <rect x="9" y="2" width="6" height="12" rx="3" />
+                <path d="M5 11a7 7 0 0 0 14 0" />
+                <path d="M12 18v4" />
+                <path d="M8 22h8" />
+              </svg>
+              <span class="absolute bottom-3 left-4 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#cfd9c2]/70">Video próximamente</span>
+            </div>
           }
+          <div class="flex flex-1 flex-col gap-2 p-6">
+            <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ program.name }}</h3>
+            <p class="text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-wine)]">
+              {{ program.schedule ?? 'Horario a confirmar' }}
+            </p>
+            @if (program.description) {
+              <p class="text-sm text-[var(--color-ink-soft)]">{{ program.description }}</p>
+            } @else {
+              <p class="text-sm italic text-[var(--color-ink-soft)]/70">Descripción próximamente.</p>
+            }
+          </div>
         </article>
       }
     </div>
