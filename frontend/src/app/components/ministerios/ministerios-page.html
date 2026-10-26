@@ -21,9 +21,7 @@
       @for (item of content.ministries; track item.name) {
         <div class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
           <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
-            <svg viewBox="0 0 24 24" fill="none" class="h-5.5 w-5.5">
-              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" />
-            </svg>
+            <app-ministry-icon [name]="item.icon" />
           </div>
           <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
           <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>

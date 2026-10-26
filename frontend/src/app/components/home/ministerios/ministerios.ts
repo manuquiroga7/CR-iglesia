@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Content } from '../../../services/content';
+import { MinistryIcon } from '../../ministerios/ministry-icon';
 
 @Component({
-  imports: [],
+  imports: [MinistryIcon],
   selector: 'app-ministerios',
   styleUrl: './ministerios.scss',
   templateUrl: './ministerios.html',
