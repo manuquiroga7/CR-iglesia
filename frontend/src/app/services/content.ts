@@ -103,7 +103,7 @@ export class Content {
     { name: 'Controles', icon: 'sliders', description: 'Control de cámaras y mezcla de la transmisión de YouTube del culto.' },
   ];
 
-  readonly radioPrograms: RadioProgram[] = [
+  readonly huellaPrograms: RadioProgram[] = [
     { name: 'En compañía del pastor', schedule: 'Todos los días · 21:00 hs', description: 'Reflexiones de reuniones con diferentes participantes, entre ellos el pastor de la congregación, Juan Sueiro.' },
     { name: 'En compañía del pastor Teens', schedule: 'Todos los viernes', description: 'Un programa de adolescentes donde pasan un rato divertido, comparten alguna reflexión y muestran la luz del evangelio.' },
     { name: 'Punto de quiebre', schedule: 'Todos los domingos · 17:00 hs', description: 'Un programa de jóvenes donde se tocan profundamente los temas que hoy afligen a la juventud.' },

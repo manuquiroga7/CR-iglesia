@@ -7,7 +7,7 @@
       La Huella Online · "Una radio con identidad"
     </div>
     <h1 class="max-w-[20ch] font-[var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
-      Nuestros programas de radio
+      Programas de La Huella
     </h1>
     <p class="mt-4 max-w-[52ch] text-lg text-[#d9dfcd]">
       Programas para toda la familia, pensados para edificar, acompañar y compartir la Palabra durante la semana.
@@ -18,7 +18,7 @@
 <section class="bg-[var(--color-neutral)] py-16 sm:py-24">
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      @for (program of content.radioPrograms; track program.name) {
+      @for (program of content.huellaPrograms; track program.name) {
         <article class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
           <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5.5 w-5.5" aria-hidden="true">

@@ -3,10 +3,10 @@ import { Content } from '../../services/content';
 
 @Component({
   imports: [],
-  selector: 'app-radio',
-  styleUrl: './radio.scss',
-  templateUrl: './radio.html',
+  selector: 'app-la-huella',
+  styleUrl: './la-huella.scss',
+  templateUrl: './la-huella.html',
 })
-export class Radio {
+export class LaHuella {
   protected readonly content = inject(Content);
 }
