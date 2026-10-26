@@ -28,7 +28,7 @@
               target="_blank"
               rel="noopener"
               [attr.aria-label]="'Ver ' + program.name + ' en YouTube'"
-              class="relative block aspect-[16/10] cursor-pointer overflow-hidden"
+              class="relative block aspect-video cursor-pointer overflow-hidden"
             >
               <img
                 [src]="'https://img.youtube.com/vi/' + program.videoId + '/hqdefault.jpg'"
@@ -44,7 +44,7 @@
               </span>
             </a>
           } @else {
-            <div class="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)]/45">
+            <div class="relative flex aspect-video items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)]/45">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-14 w-14" aria-hidden="true">
                 <rect x="9" y="2" width="6" height="12" rx="3" />
                 <path d="M5 11a7 7 0 0 0 14 0" />
