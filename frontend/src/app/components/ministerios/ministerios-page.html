@@ -19,13 +19,20 @@
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       @for (item of content.ministries; track item.name) {
-        <div class="flex flex-col gap-3 rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-6">
-          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-green)] text-[var(--color-cream)]">
-            <app-ministry-icon [name]="item.icon" />
+        <article class="flex flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)]">
+          @if (item.image) {
+            <img [src]="item.image" [alt]="'Foto del ministerio ' + item.name" loading="lazy" class="aspect-[16/10] w-full object-cover" />
+          } @else {
+            <div class="relative flex aspect-[16/10] items-center justify-center bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)]/45">
+              <app-ministry-icon [name]="item.icon" class="[&_svg]:h-14 [&_svg]:w-14" />
+              <span class="absolute bottom-3 left-4 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#cfd9c2]/70">Foto próximamente</span>
+            </div>
+          }
+          <div class="flex flex-1 flex-col gap-2 p-6">
+            <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
+            <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
           </div>
-          <h3 class="font-[var(--font-heading)] text-lg text-[var(--color-green-deep)]">{{ item.name }}</h3>
-          <p class="text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
-        </div>
+        </article>
       }
     </div>
   </div>
