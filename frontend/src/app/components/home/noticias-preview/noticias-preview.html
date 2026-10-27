@@ -20,11 +20,12 @@
             <div class="grid w-full shrink-0 grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
               @for (item of page; track item.title) {
                 <article class="flex flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream-deep)] transition hover:-translate-y-1 hover:shadow-[0_20px_34px_-20px_rgba(44,40,31,.14)]">
-                  <div class="flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-[var(--color-green)] to-[var(--color-green-deep)]">
+                  <div class="relative flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-[var(--color-green)] to-[var(--color-green-deep)]">
                     <svg viewBox="0 0 64 64" fill="none" class="h-14 w-14">
                       <path d="M32 6L32 30M22 14H42" stroke="#e7c9a9" stroke-width="2.2" stroke-linecap="round" />
                       <path d="M10 52C10 52 16 34 32 34C48 34 54 52 54 52" stroke="#e7c9a9" stroke-width="2.2" stroke-linecap="round" />
                     </svg>
+                    <span class="absolute bottom-2 left-3 right-3 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[#cfd9c2]/80">Imagen de la noticia · a cargar</span>
                   </div>
                   <div class="flex flex-1 flex-col gap-2 px-6 py-5">
                     <span class="text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-wine)]">{{ item.date }}</span>
@@ -122,11 +123,12 @@
           <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" /></svg>
         </button>
 
-        <div class="flex aspect-[16/7] items-center justify-center bg-gradient-to-br from-[var(--color-green)] to-[var(--color-green-deep)]">
+        <div class="relative flex aspect-[16/7] items-center justify-center bg-gradient-to-br from-[var(--color-green)] to-[var(--color-green-deep)]">
           <svg viewBox="0 0 64 64" fill="none" class="h-16 w-16">
             <path d="M32 6L32 30M22 14H42" stroke="#e7c9a9" stroke-width="2.2" stroke-linecap="round" />
             <path d="M10 52C10 52 16 34 32 34C48 34 54 52 54 52" stroke="#e7c9a9" stroke-width="2.2" stroke-linecap="round" />
           </svg>
+          <span class="absolute bottom-3 left-4 right-4 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[#cfd9c2]/80">Imagen de la noticia · a cargar</span>
         </div>
 
         <div class="flex flex-col gap-3 p-6 sm:p-8">
