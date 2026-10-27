@@ -26,6 +26,7 @@ export interface MinistryItem {
   icon: string;
   image?: string;
   featured?: boolean;
+  details?: string;
 }
 
 /**

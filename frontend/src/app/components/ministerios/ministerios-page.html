@@ -19,7 +19,7 @@
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
     <div class="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
       @for (item of content.ministries; track item.name) {
-        <article class="group flex cursor-pointer flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] transition duration-200 hover:border-[var(--color-green)] hover:shadow-[0_24px_40px_-22px_rgba(44,40,31,.35)] hover:[transform:translateY(-6px)]">
+        <article (click)="open(item)" class="group flex cursor-pointer flex-col overflow-hidden rounded border border-[var(--color-cream-line)] bg-[var(--color-cream)] transition duration-200 hover:border-[var(--color-green)] hover:shadow-[0_24px_40px_-22px_rgba(44,40,31,.35)] hover:[transform:translateY(-6px)]">
           @if (item.image) {
             <img [src]="item.image" [alt]="'Foto del ministerio ' + item.name" loading="lazy" class="aspect-[16/10] w-full object-cover transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)]" />
           } @else {
@@ -37,3 +37,42 @@
     </div>
   </div>
 </section>
+
+@if (selected(); as ministry) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+    [class]="closing() ? 'animate-backdrop-out' : 'animate-backdrop-in'"
+    (click)="$event.target === $event.currentTarget && close()"
+  >
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ministry-modal-title"
+      class="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-md bg-[var(--color-cream)] shadow-[0_30px_70px_-20px_rgba(0,0,0,.5)]"
+      [class]="closing() ? 'animate-modal-out' : 'animate-modal-in'"
+    >
+      <button
+        type="button"
+        (click)="close()"
+        aria-label="Cerrar"
+        class="absolute right-3 top-3 z-10 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-black/35 text-[var(--color-cream)] transition hover:bg-black/55"
+      >
+        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" /></svg>
+      </button>
+
+      @if (ministry.image) {
+        <img [src]="ministry.image" [alt]="'Foto del ministerio ' + ministry.name" class="aspect-[16/7] w-full object-cover" />
+      } @else {
+        <div class="flex aspect-[16/7] items-center justify-center bg-gradient-to-br from-[var(--color-green)] to-[var(--color-green-deep)] text-[var(--color-cream)]/70">
+          <app-ministry-icon [name]="ministry.icon" class="[&_svg]:h-16 [&_svg]:w-16" />
+        </div>
+      }
+
+      <div class="flex flex-col gap-3 p-6 sm:p-8">
+        <span class="text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-wine)]">Ministerio</span>
+        <h3 id="ministry-modal-title" class="font-[var(--font-heading)] text-2xl leading-tight text-[var(--color-green-deep)] sm:text-3xl">{{ ministry.name }}</h3>
+        <p class="whitespace-pre-line text-[var(--color-ink-soft)]">{{ ministry.details ?? ministry.description }}</p>
+      </div>
+    </div>
+  </div>
+}
