@@ -5,6 +5,7 @@ import { injectIsMobile } from '../is-mobile';
 const PAGE_SIZE_DESKTOP = 3;
 const PAGE_SIZE_MOBILE = 1;
 const AUTOPLAY_MS = 15000;
+const SWIPE_THRESHOLD_PX = 40;
 const CLOSE_ANIMATION_MS = 200;
 
 @Component({
@@ -33,6 +34,7 @@ export class NoticiasPreview {
   protected readonly closing = signal(false);
   private closeTimeoutId: ReturnType<typeof setTimeout> | undefined;
   private intervalId = setInterval(() => this.advance(), AUTOPLAY_MS);
+  private dragStartX: number | null = null;
 
   constructor() {
     effect(() => {
@@ -63,6 +65,24 @@ export class NoticiasPreview {
       this.closing.set(false);
       this.resetAutoplay();
     }, CLOSE_ANIMATION_MS);
+  }
+
+  protected onPointerDown(event: PointerEvent): void {
+    if (!this.isMobile()) return;
+    this.dragStartX = event.clientX;
+  }
+
+  protected onPointerUp(event: PointerEvent): void {
+    if (this.dragStartX === null) return;
+    const deltaX = event.clientX - this.dragStartX;
+    this.dragStartX = null;
+
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX) return;
+    if (deltaX < 0) {
+      this.next();
+    } else {
+      this.prev();
+    }
   }
 
   protected goTo(index: number): void {

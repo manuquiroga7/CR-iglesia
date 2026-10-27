@@ -7,7 +7,11 @@
     </div>
 
     <div class="relative px-11 sm:px-24">
-      <div class="overflow-hidden">
+      <div
+        class="overflow-hidden [touch-action:pan-y]"
+        (pointerdown)="onPointerDown($event)"
+        (pointerup)="onPointerUp($event)"
+      >
         <div
           class="flex gap-7 transition-transform duration-700 ease-in-out"
           [style.transform]="'translateX(calc(-' + currentPage() + ' * (100% + 1.75rem)))'"
