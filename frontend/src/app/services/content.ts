@@ -41,8 +41,8 @@ export class Content {
 
   readonly schedule: ScheduleItem[] = [
     { day: 'Domingo', kind: 'Reunión general', time: '10:00' },
-    { day: 'Martes', kind: 'Estudio bíblico', time: '20:00' },
-    { day: 'Jueves', kind: 'Oración y alabanza', time: '20:00' },
+    { day: 'Martes', kind: 'Reunión', time: '20:00' },
+    { day: 'Jueves', kind: 'Reunión', time: '20:00' },
   ];
 
   readonly news: NewsItem[] = [
