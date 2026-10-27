@@ -75,7 +75,8 @@
         Anexos
       </a>
       <a
-        href="/#noticias"
+        routerLink="/"
+        fragment="noticias"
         class="py-1 text-sm font-semibold transition-colors duration-300"
         [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
       >
@@ -115,17 +116,29 @@
       <ul>
         @for (link of mobileLinks; track link.href) {
           <li class="border-b border-[var(--color-cream-line)]/70">
-            <a
-              (click)="closeMobileMenu()"
-              [href]="link.href"
-              class="flex items-center justify-between py-4 text-base font-semibold transition-colors"
-              [class]="link.href === currentPath
-                ? 'text-[var(--color-wine)]'
-                : 'text-[var(--color-green-deep)] hover:text-[var(--color-wine)]'"
-            >
-              {{ link.label }}
-              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2 opacity-60" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            @if (link.fragment) {
+              <a
+                (click)="closeMobileMenu()"
+                routerLink="/"
+                [fragment]="link.fragment"
+                class="flex items-center justify-between py-4 text-base font-semibold text-[var(--color-green-deep)] transition-colors hover:text-[var(--color-wine)]"
+              >
+                {{ link.label }}
+                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2 opacity-60" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            } @else {
+              <a
+                (click)="closeMobileMenu()"
+                [href]="link.href"
+                class="flex items-center justify-between py-4 text-base font-semibold transition-colors"
+                [class]="link.href === currentPath
+                  ? 'text-[var(--color-wine)]'
+                  : 'text-[var(--color-green-deep)] hover:text-[var(--color-wine)]'"
+              >
+                {{ link.label }}
+                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2 opacity-60" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            }
           </li>
         }
       </ul>

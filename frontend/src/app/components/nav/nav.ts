@@ -1,14 +1,16 @@
 import { Component, HostListener, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 const MENU_CLOSE_MS = 200;
 
 interface NavLink {
   label: string;
   href: string;
+  fragment?: string;
 }
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-nav',
   styleUrl: './nav.scss',
   templateUrl: './nav.html',
@@ -25,7 +27,7 @@ export class Nav {
     { label: 'Inicio', href: '/' },
     { label: 'Nosotros', href: '/nosotros' },
     { label: 'Anexos', href: '/anexos' },
-    { label: 'Noticias', href: '/#noticias' },
+    { label: 'Noticias', href: '/#noticias', fragment: 'noticias' },
     { label: 'Ministerios', href: '/ministerios' },
     { label: 'La Huella', href: '/la-huella' },
   ];

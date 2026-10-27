@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Content } from '../../services/content';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-footer',
   styleUrl: './footer.scss',
   templateUrl: './footer.html',
