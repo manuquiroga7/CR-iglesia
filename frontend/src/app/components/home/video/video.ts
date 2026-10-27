@@ -2,9 +2,10 @@ import { Component, DestroyRef, ElementRef, afterNextRender, inject, signal } fr
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 const VIDEO_ID = 'fTDnttICzTQ';
-const EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}`;
+const START_SECONDS = 5 * 60;
+const EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?start=${START_SECONDS}`;
 // Los navegadores solo permiten autoplay si el video arranca silenciado.
-const AUTOPLAY_URL = `${EMBED_URL}?autoplay=1&mute=1&playsinline=1`;
+const AUTOPLAY_URL = `${EMBED_URL}&autoplay=1&mute=1&playsinline=1`;
 
 @Component({
   imports: [],
