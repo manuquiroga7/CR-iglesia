@@ -5,6 +5,7 @@ import { injectIsMobile } from '../is-mobile';
 const PAGE_SIZE_DESKTOP = 3;
 const PAGE_SIZE_MOBILE = 1;
 const AUTOPLAY_MS = 15000;
+const CLOSE_ANIMATION_MS = 200;
 
 @Component({
   imports: [],
@@ -29,6 +30,8 @@ export class NoticiasPreview {
 
   protected readonly currentPage = signal(0);
   protected readonly selected = signal<NewsItem | null>(null);
+  protected readonly closing = signal(false);
+  private closeTimeoutId: ReturnType<typeof setTimeout> | undefined;
   private intervalId = setInterval(() => this.advance(), AUTOPLAY_MS);
 
   constructor() {
@@ -41,6 +44,7 @@ export class NoticiasPreview {
     });
     inject(DestroyRef).onDestroy(() => {
       clearInterval(this.intervalId);
+      clearTimeout(this.closeTimeoutId);
       document.body.style.overflow = '';
     });
   }
@@ -52,9 +56,13 @@ export class NoticiasPreview {
 
   @HostListener('document:keydown.escape')
   protected close(): void {
-    if (!this.selected()) return;
-    this.selected.set(null);
-    this.resetAutoplay();
+    if (!this.selected() || this.closing()) return;
+    this.closing.set(true);
+    this.closeTimeoutId = setTimeout(() => {
+      this.selected.set(null);
+      this.closing.set(false);
+      this.resetAutoplay();
+    }, CLOSE_ANIMATION_MS);
   }
 
   protected goTo(index: number): void {
