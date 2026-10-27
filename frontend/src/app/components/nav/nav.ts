@@ -1,5 +1,7 @@
 import { Component, HostListener, signal } from '@angular/core';
 
+const MENU_CLOSE_MS = 200;
+
 interface NavLink {
   label: string;
   href: string;
@@ -14,6 +16,8 @@ interface NavLink {
 export class Nav {
   protected readonly scrolled = signal(false);
   protected readonly mobileMenuOpen = signal(false);
+  protected readonly mobileMenuRendered = signal(false);
+  private unmountTimeoutId: ReturnType<typeof setTimeout> | undefined;
 
   protected readonly currentPath = window.location.pathname;
 
@@ -32,10 +36,18 @@ export class Nav {
   }
 
   protected toggleMobileMenu(): void {
-    this.mobileMenuOpen.update((open) => !open);
+    if (this.mobileMenuOpen()) {
+      this.closeMobileMenu();
+    } else {
+      clearTimeout(this.unmountTimeoutId);
+      this.mobileMenuRendered.set(true);
+      this.mobileMenuOpen.set(true);
+    }
   }
 
   protected closeMobileMenu(): void {
+    if (!this.mobileMenuOpen()) return;
     this.mobileMenuOpen.set(false);
+    this.unmountTimeoutId = setTimeout(() => this.mobileMenuRendered.set(false), MENU_CLOSE_MS);
   }
 }

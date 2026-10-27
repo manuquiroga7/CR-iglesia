@@ -107,8 +107,11 @@
     </nav>
   </div>
 
-  @if (mobileMenuOpen()) {
-    <nav class="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-[var(--color-cream-line)] px-5 pb-6 pt-2 md:hidden">
+  @if (mobileMenuRendered()) {
+    <nav
+      class="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-[var(--color-cream-line)] px-5 pb-6 pt-2 md:hidden"
+      [class]="mobileMenuOpen() ? 'animate-menu-in' : 'animate-menu-out'"
+    >
       <ul>
         @for (link of mobileLinks; track link.href) {
           <li class="border-b border-[var(--color-cream-line)]/70">

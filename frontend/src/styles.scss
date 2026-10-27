@@ -24,7 +24,31 @@
 @theme {
   --animate-backdrop-in: backdrop-in 0.25s ease-out;
   --animate-modal-in: modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-menu-in: menu-in 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-menu-out: menu-out 0.2s ease-in forwards;
   --animate-backdrop-out: backdrop-out 0.2s ease-in forwards;
+
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes menu-out {
+    from {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      opacity: 0;
+      clip-path: inset(0 0 100% 0);
+    }
+  }
   --animate-modal-out: modal-out 0.2s ease-in forwards;
 
   @keyframes backdrop-out {
