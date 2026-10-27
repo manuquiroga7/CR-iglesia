@@ -1,4 +1,4 @@
-import { Component, computed, DestroyRef, effect, inject, signal } from '@angular/core';
+import { Component, computed, DestroyRef, effect, HostListener, inject, signal } from '@angular/core';
 import { Content, NewsItem } from '../../../services/content';
 import { injectIsMobile } from '../is-mobile';
 
@@ -28,6 +28,7 @@ export class NoticiasPreview {
   });
 
   protected readonly currentPage = signal(0);
+  protected readonly selected = signal<NewsItem | null>(null);
   private intervalId = setInterval(() => this.advance(), AUTOPLAY_MS);
 
   constructor() {
@@ -35,7 +36,25 @@ export class NoticiasPreview {
       this.pages();
       this.currentPage.set(0);
     });
-    inject(DestroyRef).onDestroy(() => clearInterval(this.intervalId));
+    effect(() => {
+      document.body.style.overflow = this.selected() ? 'hidden' : '';
+    });
+    inject(DestroyRef).onDestroy(() => {
+      clearInterval(this.intervalId);
+      document.body.style.overflow = '';
+    });
+  }
+
+  protected open(item: NewsItem): void {
+    clearInterval(this.intervalId);
+    this.selected.set(item);
+  }
+
+  @HostListener('document:keydown.escape')
+  protected close(): void {
+    if (!this.selected()) return;
+    this.selected.set(null);
+    this.resetAutoplay();
   }
 
   protected goTo(index: number): void {

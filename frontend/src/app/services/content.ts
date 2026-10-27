@@ -10,6 +10,7 @@ export interface NewsItem {
   date: string;
   title: string;
   excerpt: string;
+  body?: string;
 }
 
 export interface RadioProgram {
