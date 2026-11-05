@@ -8,6 +8,7 @@ import { LaHuella } from './components/la-huella/la-huella';
 import { ActividadesPage } from './components/actividades/actividades-page';
 import { MensajesPage } from './components/mensajes/mensajes-page';
 import { ContactoPage } from './components/contacto/contacto-page';
+import { GaleriaPage } from './components/galeria/galeria-page';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -19,4 +20,5 @@ export const routes: Routes = [
   { path: 'actividades', component: ActividadesPage },
   { path: 'mensajes', component: MensajesPage },
   { path: 'contacto', component: ContactoPage },
+  { path: 'galeria', component: GaleriaPage },
 ];

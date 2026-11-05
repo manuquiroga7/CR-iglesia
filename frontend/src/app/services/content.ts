@@ -20,6 +20,12 @@ export interface AnexoItem {
   horario: string;
 }
 
+export interface GalleryItem {
+  src?: string;
+  caption: string;
+  category: string;
+}
+
 export interface ActivityItem {
   key: string;
   name: string;
@@ -88,6 +94,23 @@ export class Content {
     { nombre: 'Durazno', descripcion: 'Comunidad de Cristo es la Respuesta en Durazno.', direccion: 'A definir', horario: 'A definir' },
     { nombre: 'Juan Lacaze', descripcion: 'Comunidad de Cristo es la Respuesta en Juan Lacaze.', direccion: 'A definir', horario: 'A definir' },
     { nombre: 'Penino', descripcion: 'Comunidad de Cristo es la Respuesta en Penino.', direccion: 'A definir', horario: 'A definir' },
+  ];
+
+  // Pendiente: fotos reales de la iglesia. Los ítems sin `src` se muestran como placeholder.
+  readonly galleryCategories = ['Todas', 'Reuniones', 'Jóvenes', 'Niños', 'Eventos', 'Templo'];
+  readonly gallery: GalleryItem[] = [
+    { src: '/images/main-page/image-1.jpg', caption: 'Nuestro templo', category: 'Templo' },
+    { caption: 'Reunión general del domingo', category: 'Reuniones' },
+    { caption: 'Tiempo de alabanza', category: 'Reuniones' },
+    { caption: 'Encuentro de jóvenes', category: 'Jóvenes' },
+    { caption: 'Retiro de jóvenes', category: 'Jóvenes' },
+    { caption: 'Escuelita bíblica', category: 'Niños' },
+    { caption: 'Actividad con los más chicos', category: 'Niños' },
+    { caption: 'Convención Nacional', category: 'Eventos' },
+    { caption: 'Culto de fin de año', category: 'Eventos' },
+    { caption: 'Jornada de puertas abiertas', category: 'Eventos' },
+    { caption: 'Interior del templo', category: 'Templo' },
+    { caption: 'Oración en comunidad', category: 'Reuniones' },
   ];
 
   // Pendiente: reuniones especiales reales (fechas y horarios) que provea la iglesia.
