@@ -60,10 +60,10 @@
         En vivo
       </span>
       <h3 class="font-[family-name:var(--font-heading)] text-3xl text-[var(--color-ink)]">Transmisiones en vivo</h3>
-      <p class="text-[var(--color-bege)]">
+      <p class="text-[var(--color-perola)]">
         Seguí las reuniones en directo desde donde estés. Si no llegás a la hora, queda grabada para verla después.
       </p>
-      <ul class="space-y-1 text-sm text-[var(--color-bege)]">
+      <ul class="space-y-1 text-sm text-[var(--color-perola)]">
         @for (s of content.schedule; track s.day) {
           <li><strong class="font-medium">{{ s.day }}</strong> · {{ s.time }} hs</li>
         }
@@ -72,7 +72,7 @@
         [href]="content.youtubeLiveUrl"
         target="_blank"
         rel="noopener"
-        class="inline-block w-fit cursor-pointer text-sm font-medium text-[var(--color-bege)] underline underline-offset-2 hover:no-underline"
+        class="inline-block w-fit cursor-pointer text-sm font-medium text-[var(--color-perola)] underline underline-offset-2 hover:no-underline"
       >
         Abrir transmisión →
       </a>
