@@ -32,6 +32,7 @@ export class Nav {
     { label: 'Noticias', href: '/#noticias', fragment: 'noticias' },
     { label: 'Ministerios', href: '/ministerios' },
     { label: 'Mensajes', href: '/mensajes' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   protected toggleMobileMenu(): void {

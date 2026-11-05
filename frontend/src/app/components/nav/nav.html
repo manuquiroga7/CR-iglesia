@@ -28,7 +28,7 @@
     <button
       type="button"
       (click)="toggleMobileMenu()"
-      class="relative flex h-9 w-9 cursor-pointer items-center justify-center md:hidden"
+      class="relative flex h-9 w-9 cursor-pointer items-center justify-center xl:hidden"
       [class]="scrolled() || mobileMenuOpen() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
       [attr.aria-expanded]="mobileMenuOpen()"
       aria-label="Abrir menú"
@@ -42,7 +42,7 @@
       </svg>
     </button>
 
-    <nav class="hidden items-center gap-7 md:flex">
+    <nav class="hidden items-center gap-6 xl:flex">
       <a
         href="/"
         class="relative py-1 text-sm font-semibold transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--color-wine)] after:content-['']"
@@ -94,6 +94,13 @@
         Mensajes
       </a>
       <a
+        href="/contacto"
+        class="py-1 text-sm font-semibold transition-colors duration-300"
+        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
+      >
+        Contacto
+      </a>
+      <a
         href="/ofrendar"
         class="rounded-sm border-[1.5px] px-5 py-2 text-sm font-semibold transition-colors duration-300"
         [class]="scrolled()
@@ -107,7 +114,7 @@
 
   @if (mobileMenuRendered()) {
     <nav
-      class="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-[var(--color-cream-line)] px-5 pb-6 pt-2 md:hidden"
+      class="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-[var(--color-cream-line)] px-5 pb-6 pt-2 xl:hidden"
       [class]="mobileMenuOpen() ? 'animate-menu-in' : 'animate-menu-out'"
     >
       <ul>

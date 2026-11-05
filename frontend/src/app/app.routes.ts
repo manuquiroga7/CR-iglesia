@@ -7,6 +7,7 @@ import { MinisteriosPage } from './components/ministerios/ministerios-page';
 import { LaHuella } from './components/la-huella/la-huella';
 import { ActividadesPage } from './components/actividades/actividades-page';
 import { MensajesPage } from './components/mensajes/mensajes-page';
+import { ContactoPage } from './components/contacto/contacto-page';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -17,4 +18,5 @@ export const routes: Routes = [
   { path: 'la-huella', component: LaHuella },
   { path: 'actividades', component: ActividadesPage },
   { path: 'mensajes', component: MensajesPage },
+  { path: 'contacto', component: ContactoPage },
 ];

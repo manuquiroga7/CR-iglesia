@@ -1,15 +1,15 @@
 <section
-  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
+  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-gradient-to-b from-[#d3dcde] via-[var(--color-perola)] to-[var(--color-bege)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
 >
   <div class="mx-auto w-full max-w-[1180px] px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
-    <div class="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
-      <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
+    <div class="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-terracota)]">
+      <span class="inline-block h-px w-6 bg-[var(--color-terracota)]"></span>
       Cristo es la Respuesta
     </div>
-    <h1 class="max-w-[20ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
+    <h1 class="max-w-[20ch] font-[family-name:var(--font-heading)] text-5xl leading-[1] text-[var(--color-terracota)] sm:text-6xl">
       Nuestras iglesias anexas
     </h1>
-    <p class="mt-4 max-w-[52ch] text-lg text-[#d9dfcd]">
+    <p class="mt-4 max-w-[52ch] text-lg text-[var(--color-ink-soft)]">
       Somos una sola familia repartida en distintos puntos, cada anexo con su propia comunidad y sus propios horarios de encuentro.
     </p>
   </div>
@@ -17,7 +17,7 @@
 
 <div class="mx-auto mt-12 flex max-w-[1180px] items-center gap-6 px-5 sm:mt-16 sm:px-8">
   <span class="h-px flex-1 bg-[var(--color-cream-line)]"></span>
-  <img src="/images/branding/logo.png" alt="Cristo es la Respuesta" class="h-16 w-16 opacity-80" />
+  <span role="img" aria-label="Cristo es la Respuesta" class="block h-16 w-16 bg-[var(--color-terracota)] opacity-80 [mask:url('/images/branding/logo.png')_center/contain_no-repeat]"></span>
   <span class="h-px flex-1 bg-[var(--color-cream-line)]"></span>
 </div>
 
@@ -30,13 +30,13 @@
     [class]="(i % 2 === 0 ? '' : 'lg:[&>*:first-child]:order-2') + (i === 0 ? ' mt-10 sm:mt-16' : '') + (i % 2 === 0 ? ' bg-[var(--color-cream)] sm:bg-[var(--color-neutral)]' : ' bg-[var(--color-cream)]')"
   >
     <div
-      class="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] lg:min-h-[420px]"
+      class="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-azul)] to-[var(--color-verde)] lg:min-h-[420px]"
       [class]="i % 2 === 0
         ? 'lg:[mask-image:linear-gradient(to_right,black_60%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_60%,transparent_100%)]'
         : 'lg:[mask-image:linear-gradient(to_left,black_60%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_60%,transparent_100%)]'"
     >
-      <img src="/images/branding/logo-claro.png" alt="" aria-hidden="true" class="h-20 w-20 opacity-25" />
-      <span class="absolute bottom-5 left-5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#cfd9c2]/70">
+      <span aria-hidden="true" class="block h-20 w-20 bg-[var(--color-perola)]/40 [mask:url('/images/branding/logo.png')_center/contain_no-repeat]"></span>
+      <span class="absolute bottom-5 left-5 text-[0.65rem] font-medium uppercase tracking-[0.14em] text-[var(--color-perola)]">
         Foto próximamente
       </span>
     </div>

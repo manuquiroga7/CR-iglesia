@@ -1,65 +1,104 @@
-<footer class="bg-[var(--color-green-deep)] text-[#cfd9c2]">
-  <div class="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+<footer class="bg-[var(--color-ink)] text-[var(--color-perola)]/80">
+  <div class="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
     <div>
       <a href="/" class="flex items-center gap-2.5">
-        <img src="images/branding/logo-claro.png" alt="Cristo es la Respuesta" class="h-9 w-9 object-contain" />
-        <span class="font-[family-name:var(--font-heading)] leading-tight text-[var(--color-cream)]">
-          <span class="block text-[1.02rem]">Cristo es la Respuesta</span>
-          <span class="block font-[family-name:var(--font-body)] text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[#a9b79a]">
+        <span
+          role="img"
+          aria-label="Cristo es la Respuesta"
+          class="block h-9 w-9 bg-[var(--color-bege)] [mask:url('/images/branding/logo.png')_center/contain_no-repeat]"
+        ></span>
+        <span class="font-[family-name:var(--font-heading)] leading-tight text-[var(--color-perola)]">
+          <span class="block text-[1.15rem]">Cristo es la Respuesta</span>
+          <span class="block font-[family-name:var(--font-body)] text-[0.62rem] font-medium uppercase tracking-[0.18em] text-[var(--color-bege)]/80">
             Primer Tabernáculo Cristiano
           </span>
         </span>
       </a>
-      <p class="mt-4 max-w-[32ch] text-sm text-[#a9b79a]">
+      <p class="mt-4 max-w-[32ch] text-sm text-[var(--color-perola)]/65">
         Una congregación en Uruguay que anuncia la Palabra y sirve a su comunidad desde hace más de dos décadas.
       </p>
-      <div class="mt-4 flex gap-3">
+      <div class="mt-5 flex gap-3">
+        <a
+          [href]="content.whatsappUrl"
+          target="_blank"
+          rel="noopener"
+          aria-label="WhatsApp"
+          class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--color-perola)]/35 text-[var(--color-perola)] transition hover:bg-[var(--color-perola)] hover:text-[var(--color-ink)]"
+        >
+          <svg viewBox="0 0 24 24" class="h-[18px] w-[18px] fill-none stroke-current stroke-[1.6]" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" /><path d="M9 8.5c0 3 2.5 5.5 5.5 6l1.2-1.4-2-1-.9.8c-.9-.4-1.7-1.2-2.1-2.1l.8-.9-1-2z" /></svg>
+        </a>
         <a
           [href]="content.instagramUrl"
           target="_blank"
           rel="noopener"
           aria-label="Instagram"
-          class="flex h-9 w-9 items-center justify-center rounded-full border border-[#cfd9c2]/35 hover:bg-[#cfd9c2]/10"
+          class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--color-perola)]/35 text-[var(--color-perola)] transition hover:bg-[var(--color-perola)] hover:text-[var(--color-ink)]"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="3" width="18" height="18" rx="5" stroke="#cfd9c2" stroke-width="1.6" />
-            <circle cx="12" cy="12" r="4" stroke="#cfd9c2" stroke-width="1.6" />
-            <circle cx="17.2" cy="6.8" r="1" fill="#cfd9c2" />
-          </svg>
+          <svg viewBox="0 0 24 24" class="h-[18px] w-[18px] fill-none stroke-current stroke-[1.6]" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="1" fill="currentColor" /></svg>
+        </a>
+        <a
+          [href]="content.youtubeChannelUrl"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--color-perola)]/35 text-[var(--color-perola)] transition hover:bg-[var(--color-perola)] hover:text-[var(--color-ink)]"
+        >
+          <svg viewBox="0 0 24 24" class="h-[18px] w-[18px] fill-none stroke-current stroke-[1.6]" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3.5" /><path d="M10 9.5v5l4.5-2.5z" /></svg>
+        </a>
+        <a
+          [href]="content.mapsUrl"
+          target="_blank"
+          rel="noopener"
+          aria-label="Ubicación"
+          class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--color-perola)]/35 text-[var(--color-perola)] transition hover:bg-[var(--color-perola)] hover:text-[var(--color-ink)]"
+        >
+          <svg viewBox="0 0 24 24" class="h-[18px] w-[18px] fill-none stroke-current stroke-[1.6]" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
         </a>
       </div>
     </div>
 
     <div class="grid grid-cols-2 gap-6 md:contents">
-    <div>
-      <h4 class="mb-3 text-xs font-bold uppercase tracking-[0.1em] text-[#9fb08f]">Navegación</h4>
-      <ul class="grid gap-2 text-sm">
-        <li><a href="/" class="hover:text-[var(--color-cream)] hover:underline">Inicio</a></li>
-        <li><a href="/nosotros" class="hover:text-[var(--color-cream)] hover:underline">Nosotros</a></li>
-        <li><a href="/anexos" class="hover:text-[var(--color-cream)] hover:underline">Anexos</a></li>
-        <li><a routerLink="/" fragment="noticias" class="hover:text-[var(--color-cream)] hover:underline">Noticias</a></li>
-        <li><a href="/ministerios" class="hover:text-[var(--color-cream)] hover:underline">Ministerios</a></li>
-        <li><a href="/la-huella" class="hover:text-[var(--color-cream)] hover:underline">La Huella</a></li>
-      </ul>
+      <div>
+        <h4 class="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-bege)]">Navegación</h4>
+        <ul class="grid gap-2 text-sm">
+          <li><a href="/" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Inicio</a></li>
+          <li><a href="/nosotros" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Nosotros</a></li>
+          <li><a href="/actividades" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Actividades</a></li>
+          <li><a href="/anexos" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Anexos</a></li>
+          <li><a routerLink="/" fragment="noticias" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Noticias</a></li>
+          <li><a href="/ministerios" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Ministerios</a></li>
+          <li><a href="/mensajes" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Mensajes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-bege)]">Comunidad</h4>
+        <ul class="grid gap-2 text-sm">
+          <li><a routerLink="/" fragment="horarios" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Horarios</a></li>
+          <li><a routerLink="/" fragment="oracion" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Pedidos de oración</a></li>
+          <li><a href="/la-huella" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">La Huella</a></li>
+          <li><a href="/ofrendar" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Ofrendar</a></li>
+          <li><a href="/contacto" class="cursor-pointer hover:text-[var(--color-perola)] hover:underline">Contacto</a></li>
+        </ul>
+      </div>
     </div>
 
     <div>
-      <h4 class="mb-3 text-xs font-bold uppercase tracking-[0.1em] text-[#9fb08f]">Comunidad</h4>
-      <ul class="grid gap-2 text-sm">
-        <li><a href="/#horarios" class="hover:text-[var(--color-cream)] hover:underline">Horarios</a></li>
-        <li><a href="/ofrendar" class="hover:text-[var(--color-cream)] hover:underline">Ofrendar</a></li>
-        <li><a href="#" class="hover:text-[var(--color-cream)] hover:underline">Contacto</a></li>
-      </ul>
-    </div>
-    </div>
-
-    <div>
-      <h4 class="mb-3 text-xs font-bold uppercase tracking-[0.1em] text-[#9fb08f]">Visitanos</h4>
+      <h4 class="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-bege)]">Visitanos</h4>
       <p class="text-sm">{{ content.address }}</p>
+      <ul class="mt-3 space-y-1 text-sm text-[var(--color-perola)]/65">
+        @for (s of content.schedule; track s.day) {
+          <li>{{ s.day }} · {{ s.time }} hs</li>
+        }
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <a href="/contacto" class="cursor-pointer rounded-sm border border-[var(--color-perola)]/45 px-3.5 py-2 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-perola)] transition hover:bg-[var(--color-perola)] hover:text-[var(--color-ink)]">Contacto</a>
+        <a routerLink="/" fragment="oracion" class="cursor-pointer rounded-sm border border-[var(--color-perola)]/45 px-3.5 py-2 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-perola)] transition hover:bg-[var(--color-perola)] hover:text-[var(--color-ink)]">Pedir oración</a>
+      </div>
     </div>
   </div>
 
-  <div class="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-2 border-t border-[#cfd9c2]/15 px-5 py-5 text-xs text-[#8fa07f] sm:px-8">
+  <div class="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-2 border-t border-[var(--color-perola)]/15 px-5 py-5 text-xs text-[var(--color-perola)]/55 sm:px-8">
     <span>© 2026 Cristo es la Respuesta.</span>
     <span>Propuesta provisional de diseño — contenido de ejemplo.</span>
   </div>
