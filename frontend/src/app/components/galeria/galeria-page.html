@@ -1,5 +1,5 @@
 <section
-  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-gradient-to-b from-[#d3dcde] via-[var(--color-perola)] to-[var(--color-bege)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
+  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-gradient-to-b from-[#d3dcde] via-[var(--color-perola)] to-[var(--color-verde)]/45 sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
 >
   <div class="mx-auto w-full max-w-[1180px] px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
     <div class="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-terracota)]">
@@ -23,8 +23,8 @@
           type="button"
           (click)="setCategory(c)"
           [class]="category() === c
-            ? 'bg-[var(--color-terracota)] text-[var(--color-perola)] border-[var(--color-terracota)]'
-            : 'bg-transparent text-[var(--color-terracota)] border-[var(--color-terracota)]/45 hover:bg-[var(--color-bege)]'"
+            ? 'bg-[var(--color-verde-deep)] text-[var(--color-perola)] border-[var(--color-verde-deep)]'
+            : 'bg-transparent text-[var(--color-verde-deep)] border-[var(--color-verde-deep)]/50 hover:bg-[var(--color-bege)]'"
           class="cursor-pointer rounded-full border px-4 py-2 text-sm font-medium tracking-wide transition-colors"
         >
           {{ c }}

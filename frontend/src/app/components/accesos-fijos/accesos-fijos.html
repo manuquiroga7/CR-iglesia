@@ -5,11 +5,11 @@
 >
   @for (a of accesos; track a.key) {
     @if (a.external) {
-      <a [href]="a.href" target="_blank" rel="noopener" class="flex cursor-pointer flex-col items-center gap-1 py-2.5 text-[var(--color-terracota)] active:bg-[var(--color-bege)]">
+      <a [href]="a.href" target="_blank" rel="noopener" class="flex cursor-pointer flex-col items-center gap-1 py-2.5 text-[var(--color-verde-deep)] active:bg-[var(--color-bege)]">
         <ng-container *ngTemplateOutlet="contenido; context: { $implicit: a }" />
       </a>
     } @else {
-      <a routerLink="/" fragment="oracion" class="flex cursor-pointer flex-col items-center gap-1 py-2.5 text-[var(--color-terracota)] active:bg-[var(--color-bege)]">
+      <a routerLink="/" fragment="oracion" class="flex cursor-pointer flex-col items-center gap-1 py-2.5 text-[var(--color-verde-deep)] active:bg-[var(--color-bege)]">
         <ng-container *ngTemplateOutlet="contenido; context: { $implicit: a }" />
       </a>
     }
@@ -25,7 +25,7 @@
         target="_blank"
         rel="noopener"
         [attr.aria-label]="a.label"
-        class="group relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[var(--color-perola)] text-[var(--color-terracota)] shadow-[0_10px_24px_-8px_rgba(58,36,24,.4)] ring-1 ring-[var(--color-line)] transition hover:bg-[var(--color-terracota)] hover:text-[var(--color-perola)]"
+        class="group relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[var(--color-perola)] text-[var(--color-verde-deep)] shadow-[0_10px_24px_-8px_rgba(58,36,24,.4)] ring-1 ring-[var(--color-line)] transition hover:bg-[var(--color-verde-deep)] hover:text-[var(--color-perola)]"
       >
         <ng-container *ngTemplateOutlet="icono; context: { $implicit: a }" />
         <span class="pointer-events-none absolute right-14 whitespace-nowrap rounded-sm bg-[var(--color-ink)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-perola)] opacity-0 transition group-hover:opacity-100">{{ a.label }}</span>
@@ -35,7 +35,7 @@
         routerLink="/"
         fragment="oracion"
         [attr.aria-label]="a.label"
-        class="group relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[var(--color-perola)] text-[var(--color-terracota)] shadow-[0_10px_24px_-8px_rgba(58,36,24,.4)] ring-1 ring-[var(--color-line)] transition hover:bg-[var(--color-terracota)] hover:text-[var(--color-perola)]"
+        class="group relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[var(--color-perola)] text-[var(--color-verde-deep)] shadow-[0_10px_24px_-8px_rgba(58,36,24,.4)] ring-1 ring-[var(--color-line)] transition hover:bg-[var(--color-verde-deep)] hover:text-[var(--color-perola)]"
       >
         <ng-container *ngTemplateOutlet="icono; context: { $implicit: a }" />
         <span class="pointer-events-none absolute right-14 whitespace-nowrap rounded-sm bg-[var(--color-ink)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-perola)] opacity-0 transition group-hover:opacity-100">{{ a.label }}</span>

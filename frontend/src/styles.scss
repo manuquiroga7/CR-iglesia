@@ -15,6 +15,8 @@
   --color-ink-soft: #5c4636;
   --color-line: #d2c4ae;
   --color-terracota-deep: #7c3611;
+  --color-verde-deep: #5d6650; /* verde oscuro para texto y acentos (el verde claro no alcanza contraste con texto chico) */
+  --color-verde-night: #353c2d; /* fondos oscuros: footer */
 
   /* Alias heredados: los templates existentes usan estos nombres.
      cream = fondo base, cream-deep = fondo de tarjetas, green = acción principal,
@@ -23,10 +25,10 @@
   --color-cream-deep: var(--color-bege);
   --color-cream-line: var(--color-line);
   --color-neutral: var(--color-perola);
-  --color-green: var(--color-terracota-deep);
+  --color-green: var(--color-verde-deep);
   --color-green-deep: var(--color-terracota);
-  --color-wine: var(--color-terracota);
-  --color-wine-deep: var(--color-terracota-deep);
+  --color-wine: var(--color-verde-deep);
+  --color-wine-deep: var(--color-verde-night);
 
   --font-heading: "Instrument Serif", Georgia, serif;
   --font-body: "Jost", system-ui, sans-serif;
