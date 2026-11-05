@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 const MENU_CLOSE_MS = 200;
@@ -16,7 +16,8 @@ interface NavLink {
   templateUrl: './nav.html',
 })
 export class Nav {
-  protected readonly scrolled = signal(false);
+  // El hero ahora es claro: la barra va siempre sobre fondo pérola.
+  protected readonly scrolled = signal(true);
   protected readonly mobileMenuOpen = signal(false);
   protected readonly mobileMenuRendered = signal(false);
   private unmountTimeoutId: ReturnType<typeof setTimeout> | undefined;
@@ -31,11 +32,6 @@ export class Nav {
     { label: 'Ministerios', href: '/ministerios' },
     { label: 'La Huella', href: '/la-huella' },
   ];
-
-  @HostListener('window:scroll')
-  onWindowScroll(): void {
-    this.scrolled.set(window.scrollY > 40);
-  }
 
   protected toggleMobileMenu(): void {
     if (this.mobileMenuOpen()) {

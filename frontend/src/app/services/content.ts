@@ -122,5 +122,8 @@ export class Content {
   ];
 
   readonly youtubeChannelUrl = 'https://www.youtube.com/@lahuellaonlinecr4464';
+  // Pendiente: número real de WhatsApp de la iglesia (formato wa.me/598XXXXXXXX)
+  readonly whatsappUrl = 'https://wa.me/';
+  readonly mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Burgues+3826+Montevideo+Uruguay';
   readonly whatsappChannelUrl = 'https://whatsapp.com/channel/';
 }

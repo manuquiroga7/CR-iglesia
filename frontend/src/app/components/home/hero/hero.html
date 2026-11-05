@@ -9,57 +9,83 @@
     [class]="current() === 0 ? 'flex w-[200%] shrink-0 transition-transform duration-700 ease-in-out [transform:translateX(0)]' : 'flex w-[200%] shrink-0 transition-transform duration-700 ease-in-out [transform:translateX(-50%)]'"
   >
     <!-- Slide 1: institucional -->
-    <div class="relative flex w-1/2 flex-col overflow-hidden bg-[url('/images/hero/bg-slide-1.png')] bg-cover bg-[position:30%_center] sm:bg-center">
-      <div class="absolute inset-0 bg-[#2c2c28]/72"></div>
+    <div class="relative flex w-1/2 flex-col overflow-hidden bg-[var(--color-perola)]">
+      <!-- Paisaje desenfocado abstracto -->
+      <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -inset-[10%] blur-[40px]">
+          <div class="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-[#c4cfd2] to-[#e4e7df]"></div>
+          <div class="absolute -inset-x-[8%] top-[30%] h-[10%] bg-[#8f8a6c]/75 motion-safe:animate-deriva"></div>
+          <div class="absolute -inset-x-[8%] top-[38%] h-[14%] bg-[#a8ad88] motion-safe:animate-deriva [animation-delay:-8s]"></div>
+          <div class="absolute -inset-x-[8%] top-[50%] h-[9%] bg-[#6f7a58]/60 motion-safe:animate-deriva [animation-delay:-14s]"></div>
+          <div class="absolute -inset-x-[8%] top-[58%] h-[16%] bg-[var(--color-verde)] motion-safe:animate-deriva [animation-delay:-4s]"></div>
+          <div class="absolute -inset-x-[8%] top-[72%] h-[10%] bg-[#cdc7a0] motion-safe:animate-deriva [animation-delay:-11s]"></div>
+          <div class="absolute inset-x-0 top-[80%] h-[20%] bg-[var(--color-bege)]"></div>
+        </div>
+        <div class="absolute inset-0 bg-[var(--color-perola)]/40"></div>
+      </div>
 
-      <div class="relative z-10 mx-auto grid w-full max-w-[1180px] flex-1 items-center gap-10 px-5 py-16 sm:px-8 sm:py-24">
+      <div class="relative z-10 mx-auto grid w-full max-w-[1180px] flex-1 content-center items-center gap-10 px-5 py-24 sm:px-8 sm:py-28">
         <div>
           <div class="flex flex-col">
-          <div class="order-2 mt-4 sm:order-1 sm:mb-4 sm:mt-0 flex items-start gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
-            <span class="mt-[0.45rem] inline-block h-px w-6 shrink-0 bg-[var(--color-wine)]"></span>
-            <div class="leading-relaxed">
-              <p>Iglesia Cristo es la Respuesta, Primer Tabernáculo Cristiano</p>
-              <p>Montevideo Uruguay</p>
+            <div class="order-2 mt-4 flex items-start gap-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-terracota)] sm:order-1 sm:mb-4 sm:mt-0">
+              <span class="mt-[0.45rem] inline-block h-px w-6 shrink-0 bg-[var(--color-terracota)]"></span>
+              <div class="leading-relaxed">
+                <p>Iglesia Cristo es la Respuesta, Primer Tabernáculo Cristiano</p>
+                <p>Montevideo Uruguay</p>
+              </div>
+            </div>
+            <div class="order-1 flex items-center gap-4 sm:order-2 sm:gap-8">
+              <span
+                role="img"
+                aria-label="Cristo es la Respuesta"
+                class="block h-14 w-14 shrink-0 bg-[var(--color-terracota)] [mask:url('/images/branding/logo.png')_center/contain_no-repeat] sm:h-28 sm:w-28"
+              ></span>
+              <h1 class="max-w-[18ch] font-[family-name:var(--font-heading)] text-5xl leading-[1] text-[var(--color-terracota)] sm:text-7xl">
+                Casa de<br /><i class="text-[var(--color-azul)]">misericordia</i>
+              </h1>
             </div>
           </div>
-          <div class="order-1 sm:order-2 flex items-center gap-4 sm:gap-8">
-            <img src="images/branding/logo-claro.png" alt="Cristo es la Respuesta" class="h-14 w-14 shrink-0 object-contain sm:h-28 sm:w-28" />
-            <h1 class="max-w-[18ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-6xl">
-              Casa de<br /><i class="italic text-[#e7c9a9]">misericordia</i>
-            </h1>
-          </div>
-          </div>
-          <p class="mt-4 max-w-[46ch] text-lg text-[#d9dfcd]">
+          <p class="mt-4 max-w-[46ch] text-lg text-[var(--color-ink)]">
             Un lugar donde la misericordia de Dios alcanza el corazón, su gracia restaura las vidas y su Palabra nos guía a conocerlo cada día más.
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#horarios" class="inline-flex items-center gap-2 rounded-sm bg-[var(--color-cream)] px-6 py-3 text-sm font-semibold text-[var(--color-green-deep)] transition hover:bg-white">
+            <a href="#horarios" class="inline-flex items-center gap-2 rounded-sm bg-[var(--color-terracota)] px-6 py-3 text-sm font-medium tracking-wide text-[var(--color-perola)] transition hover:bg-[var(--color-terracota-deep)]">
               Ver horarios
               <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="#noticias" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
+            <a href="#noticias" class="rounded-sm border-[1.5px] border-[var(--color-terracota)]/60 px-6 py-3 text-sm font-medium tracking-wide text-[var(--color-terracota)] transition hover:border-[var(--color-terracota)] hover:bg-[var(--color-terracota)]/10">
               Últimas noticias
             </a>
-            <a href="#ofrendar" class="rounded-sm border-[1.5px] border-[var(--color-cream)]/55 px-6 py-3 text-sm font-semibold text-[var(--color-cream)] transition hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/10">
+            <a href="#ofrendar" class="rounded-sm border-[1.5px] border-[var(--color-terracota)]/60 px-6 py-3 text-sm font-medium tracking-wide text-[var(--color-terracota)] transition hover:border-[var(--color-terracota)] hover:bg-[var(--color-terracota)]/10">
               Ofrendar
             </a>
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-9 border-t border-[var(--color-cream)]/18 pt-6">
-          <div class="text-sm text-[#c7cfb9]">
-            <strong class="mb-1 block font-[family-name:var(--font-heading)] text-lg text-[var(--color-cream)]">3</strong>
-            Encuentros semanales
-          </div>
-          <div class="text-sm text-[#c7cfb9]">
-            <strong class="mb-1 block font-[family-name:var(--font-heading)] text-lg text-[var(--color-cream)]">+20 años</strong>
-            De historia como comunidad
-          </div>
-          <div class="text-sm text-[#c7cfb9]">
-            <strong class="mb-1 block font-[family-name:var(--font-heading)] text-lg text-[var(--color-cream)]">Burgues 3826</strong>
-            esq. José Batlle y Ordóñez
-          </div>
-        </div>
+        <!-- Accesos rápidos -->
+        <nav aria-label="Accesos rápidos" class="grid grid-cols-5 gap-1 border-t border-[var(--color-terracota)]/25 pt-6 sm:gap-4">
+          @for (a of quickAccess; track a.label) {
+            <a
+              [href]="a.href"
+              [attr.target]="a.external ? '_blank' : null"
+              [attr.rel]="a.external ? 'noopener' : null"
+              class="group flex cursor-pointer flex-col items-center gap-2 text-center"
+            >
+              <span class="flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-[var(--color-terracota)]/50 text-[var(--color-terracota)] transition group-hover:bg-[var(--color-terracota)] group-hover:text-[var(--color-perola)] sm:h-14 sm:w-14">
+                <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.6] sm:h-6 sm:w-6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  @switch (a.key) {
+                    @case ('horarios') { <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /> }
+                    @case ('ubicacion') { <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /> }
+                    @case ('whatsapp') { <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" /><path d="M9 8.5c0 3 2.5 5.5 5.5 6l1.2-1.4-2-1-.9.8c-.9-.4-1.7-1.2-2.1-2.1l.8-.9-1-2z" /> }
+                    @case ('youtube') { <rect x="3" y="5.5" width="18" height="13" rx="3.5" /><path d="M10 9.5v5l4.5-2.5z" /> }
+                    @case ('oracion') { <path d="M12 20.5s-8-4.7-8-10.5A4.5 4.5 0 0 1 12 7.5 4.5 4.5 0 0 1 20 10c0 5.8-8 10.5-8 10.5z" /> }
+                  }
+                </svg>
+              </span>
+              <span class="text-[0.62rem] font-medium uppercase tracking-[0.14em] text-[var(--color-ink)] sm:text-xs">{{ a.label }}</span>
+            </a>
+          }
+        </nav>
       </div>
     </div>
 
@@ -124,17 +150,18 @@
   </div>
 
   <!-- Controles del slider -->
+  <div [class]="current() === 0 ? 'contents text-[var(--color-terracota)]/70' : 'contents text-[var(--color-cream)]/60'">
   <button
     (click)="prev()"
     aria-label="Slide anterior"
-    class="absolute left-2 top-1/2 z-20 hidden h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-cream)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-cream)] sm:flex sm:left-4"
+    class="absolute left-2 top-1/2 z-20 hidden h-9 w-9 cursor-pointer items-center justify-center transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] sm:flex sm:left-4"
   >
     <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current stroke-[1.5]"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
   <button
     (click)="next()"
     aria-label="Slide siguiente"
-    class="absolute right-2 top-1/2 z-20 hidden h-9 w-9 cursor-pointer items-center justify-center text-[var(--color-cream)]/60 transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] hover:text-[var(--color-cream)] sm:flex sm:right-4"
+    class="absolute right-2 top-1/2 z-20 hidden h-9 w-9 cursor-pointer items-center justify-center transition [transform:translateY(-50%)] hover:[transform:translateY(-50%)_scale(1.15)] sm:flex sm:right-4"
   >
     <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
@@ -144,8 +171,9 @@
       <button
         (click)="goTo(i)"
         [attr.aria-label]="'Ir al slide ' + (i + 1)"
-        [class]="current() === i ? 'h-2 w-6 rounded-full bg-[var(--color-cream)] transition-all' : 'h-2 w-2 rounded-full bg-[var(--color-cream)]/40 transition-all hover:bg-[var(--color-cream)]/70'"
+        [class]="current() === i ? 'h-2 w-6 rounded-full bg-current transition-all' : 'h-2 w-2 rounded-full bg-current opacity-40 transition-all hover:opacity-70'"
       ></button>
     }
+  </div>
   </div>
 </section>
