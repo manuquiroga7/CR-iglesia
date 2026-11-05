@@ -1,0 +1,61 @@
+<!-- Celular: barra inferior siempre visible -->
+<nav
+  aria-label="Accesos rápidos"
+  class="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-[var(--color-line)] bg-[var(--color-perola)]/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-8px_24px_-12px_rgba(58,36,24,.25)] backdrop-blur sm:hidden"
+>
+  @for (a of accesos; track a.key) {
+    @if (a.external) {
+      <a [href]="a.href" target="_blank" rel="noopener" class="flex cursor-pointer flex-col items-center gap-1 py-2.5 text-[var(--color-terracota)] active:bg-[var(--color-bege)]">
+        <ng-container *ngTemplateOutlet="contenido; context: { $implicit: a }" />
+      </a>
+    } @else {
+      <a routerLink="/" fragment="oracion" class="flex cursor-pointer flex-col items-center gap-1 py-2.5 text-[var(--color-terracota)] active:bg-[var(--color-bege)]">
+        <ng-container *ngTemplateOutlet="contenido; context: { $implicit: a }" />
+      </a>
+    }
+  }
+</nav>
+
+<!-- PC: columna de botones sobre el borde derecho -->
+<nav aria-label="Accesos rápidos" class="fixed bottom-24 right-8 z-30 hidden flex-col gap-3 sm:flex">
+  @for (a of accesos; track a.key) {
+    @if (a.external) {
+      <a
+        [href]="a.href"
+        target="_blank"
+        rel="noopener"
+        [attr.aria-label]="a.label"
+        class="group relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[var(--color-perola)] text-[var(--color-terracota)] shadow-[0_10px_24px_-8px_rgba(58,36,24,.4)] ring-1 ring-[var(--color-line)] transition hover:bg-[var(--color-terracota)] hover:text-[var(--color-perola)]"
+      >
+        <ng-container *ngTemplateOutlet="icono; context: { $implicit: a }" />
+        <span class="pointer-events-none absolute right-14 whitespace-nowrap rounded-sm bg-[var(--color-ink)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-perola)] opacity-0 transition group-hover:opacity-100">{{ a.label }}</span>
+      </a>
+    } @else {
+      <a
+        routerLink="/"
+        fragment="oracion"
+        [attr.aria-label]="a.label"
+        class="group relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[var(--color-perola)] text-[var(--color-terracota)] shadow-[0_10px_24px_-8px_rgba(58,36,24,.4)] ring-1 ring-[var(--color-line)] transition hover:bg-[var(--color-terracota)] hover:text-[var(--color-perola)]"
+      >
+        <ng-container *ngTemplateOutlet="icono; context: { $implicit: a }" />
+        <span class="pointer-events-none absolute right-14 whitespace-nowrap rounded-sm bg-[var(--color-ink)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-perola)] opacity-0 transition group-hover:opacity-100">{{ a.label }}</span>
+      </a>
+    }
+  }
+</nav>
+
+<ng-template #contenido let-a>
+  <ng-container *ngTemplateOutlet="icono; context: { $implicit: a }" />
+  <span class="text-[0.6rem] font-medium uppercase tracking-[0.12em] text-[var(--color-ink)]">{{ a.label }}</span>
+</ng-template>
+
+<ng-template #icono let-a>
+  <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.6]" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    @switch (a.key) {
+      @case ('ubicacion') { <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /> }
+      @case ('whatsapp') { <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" /><path d="M9 8.5c0 3 2.5 5.5 5.5 6l1.2-1.4-2-1-.9.8c-.9-.4-1.7-1.2-2.1-2.1l.8-.9-1-2z" /> }
+      @case ('youtube') { <rect x="3" y="5.5" width="18" height="13" rx="3.5" /><path d="M10 9.5v5l4.5-2.5z" /> }
+      @case ('oracion') { <path d="M12 20.5s-8-4.7-8-10.5A4.5 4.5 0 0 1 12 7.5 4.5 4.5 0 0 1 20 10c0 5.8-8 10.5-8 10.5z" /> }
+    }
+  </svg>
+</ng-template>
