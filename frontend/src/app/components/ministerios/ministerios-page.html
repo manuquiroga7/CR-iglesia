@@ -6,7 +6,7 @@
       <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
       Cristo es la Respuesta
     </div>
-    <h1 class="max-w-[20ch] font-[var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
+    <h1 class="max-w-[20ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
       Nuestros ministerios
     </h1>
     <p class="mt-4 max-w-[52ch] text-lg text-[#d9dfcd]">
@@ -29,7 +29,7 @@
             </div>
           }
           <div class="flex flex-1 flex-col gap-1.5 p-3.5 sm:gap-2 sm:p-6">
-            <h3 class="font-[var(--font-heading)] text-base leading-tight text-[var(--color-green-deep)] sm:text-lg">{{ item.name }}</h3>
+            <h3 class="font-[family-name:var(--font-heading)] text-base leading-tight text-[var(--color-green-deep)] sm:text-lg">{{ item.name }}</h3>
             <p class="text-xs text-[var(--color-ink-soft)] sm:text-sm">{{ item.description }}</p>
           </div>
         </article>
@@ -70,7 +70,7 @@
 
       <div class="flex flex-col gap-3 p-6 sm:p-8">
         <span class="text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-wine)]">Ministerio</span>
-        <h3 id="ministry-modal-title" class="font-[var(--font-heading)] text-2xl leading-tight text-[var(--color-green-deep)] sm:text-3xl">{{ ministry.name }}</h3>
+        <h3 id="ministry-modal-title" class="font-[family-name:var(--font-heading)] text-2xl leading-tight text-[var(--color-green-deep)] sm:text-3xl">{{ ministry.name }}</h3>
         <p class="whitespace-pre-line text-[var(--color-ink-soft)]">{{ ministry.details ?? ministry.description }}</p>
       </div>
     </div>
