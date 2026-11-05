@@ -33,7 +33,7 @@
   --font-heading: "Libre Baskerville", Georgia, serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-accent: "Pinyon Script", cursive;
-  --font-italic: "EB Garamond", Georgia, serif;
+  --font-italic: "Lora", Georgia, serif;
 }
 
 @theme {
@@ -131,14 +131,13 @@ body {
 }
 
 /* Cursiva de títulos: la itálica de Libre Baskerville es ancha y pesada, así que los
-   textos en cursiva con fuente de título usan EB Garamond (más fina, elegante y legible).
-   Garamond tiene menos altura de letra: se compensa con un tamaño algo mayor. */
+   textos en cursiva con fuente de título usan Lora Itálica (letra alta y trazo parejo:
+   elegante y la que mejor se lee a tamaño de título). */
 :is(h1, h2, h3, h4, [class*="--font-heading"]) :is(i, em),
 .italic[class*="--font-heading"] {
   font-family: var(--font-italic);
   font-weight: 500;
-  font-size: 1.1em;
-  letter-spacing: 0.005em;
+  font-size: 1em;
 }
 
 /* Las citas (referencias bíblicas) dentro de textos en cursiva vuelven a la fuente de cuerpo. */
