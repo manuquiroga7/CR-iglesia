@@ -31,7 +31,7 @@ export class Nav {
     { label: 'Anexos', href: '/anexos' },
     { label: 'Noticias', href: '/#noticias', fragment: 'noticias' },
     { label: 'Ministerios', href: '/ministerios' },
-    { label: 'La Huella', href: '/la-huella' },
+    { label: 'Mensajes', href: '/mensajes' },
   ];
 
   protected toggleMobileMenu(): void {

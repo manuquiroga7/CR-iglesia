@@ -197,6 +197,10 @@ export class Content {
   ];
 
   readonly youtubeChannelUrl = 'https://www.youtube.com/@lahuellaonlinecr4464';
+  readonly youtubeLiveUrl = 'https://www.youtube.com/@lahuellaonlinecr4464/live';
+  readonly youtubeVideosUrl = 'https://www.youtube.com/@lahuellaonlinecr4464/videos';
+  // Último culto publicado (se muestra incrustado en Mensajes).
+  readonly latestMessageVideoId = 'fTDnttICzTQ';
   // Pendiente: número real de WhatsApp de la iglesia (formato wa.me/598XXXXXXXX)
   readonly whatsappUrl = 'https://wa.me/';
   readonly mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Burgues+3826+Montevideo+Uruguay';
