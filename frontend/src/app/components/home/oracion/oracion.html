@@ -1,0 +1,56 @@
+<section id="oracion" class="scroll-mt-16 bg-[var(--color-bege)] py-16 sm:py-24">
+  <div class="mx-auto grid max-w-[1180px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
+    <div>
+      <span class="mb-1 block font-[family-name:var(--font-accent)] text-4xl text-[var(--color-terracota)]">Estamos para orar por vos</span>
+      <h2 class="font-[family-name:var(--font-heading)] text-4xl text-[var(--color-terracota)] sm:text-5xl">Pedidos de oración</h2>
+      <p class="mt-4 max-w-[46ch] text-[var(--color-ink-soft)]">
+        Contanos tu motivo de oración y nuestro equipo de intercesión va a orar por vos. Lo recibimos por WhatsApp, con total respeto y cuidado.
+      </p>
+      <p class="mt-6 max-w-[46ch] border-l-2 border-[var(--color-terracota)]/50 pl-4 font-[family-name:var(--font-heading)] text-xl italic leading-relaxed text-[var(--color-ink)]">
+        "Sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias."
+        <cite class="mt-2 block text-xs not-italic font-medium uppercase tracking-[0.22em] text-[var(--color-azul)]">Filipenses 4:6</cite>
+      </p>
+    </div>
+
+    <form (submit)="send($event)" novalidate class="rounded bg-[var(--color-perola)] p-6 sm:p-8">
+      <label for="oracion-nombre" class="block text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-soft)]">Tu nombre <span class="normal-case tracking-normal">(opcional)</span></label>
+      <input
+        id="oracion-nombre"
+        type="text"
+        autocomplete="name"
+        [value]="name()"
+        (input)="onName($event)"
+        class="mt-2 w-full rounded-sm border border-[var(--color-line)] bg-white/60 px-4 py-3 text-[var(--color-ink)] outline-none transition focus:border-[var(--color-terracota)]"
+      />
+
+      <label for="oracion-motivo" class="mt-5 block text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-soft)]">Motivo de oración</label>
+      <textarea
+        id="oracion-motivo"
+        rows="5"
+        [value]="request()"
+        (input)="onRequest($event)"
+        [attr.aria-invalid]="showError()"
+        aria-describedby="oracion-error"
+        class="mt-2 w-full resize-y rounded-sm border bg-white/60 px-4 py-3 text-[var(--color-ink)] outline-none transition focus:border-[var(--color-terracota)]"
+        [class]="showError() ? 'border-[var(--color-terracota)]' : 'border-[var(--color-line)]'"
+      ></textarea>
+      @if (showError()) {
+        <p id="oracion-error" class="mt-1 text-sm text-[var(--color-terracota)]">Escribí tu motivo de oración para poder enviarlo.</p>
+      }
+
+      <label class="mt-4 flex cursor-pointer items-start gap-2 text-sm text-[var(--color-ink-soft)]">
+        <input type="checkbox" [checked]="confidential()" (change)="onConfidential($event)" class="mt-1 h-4 w-4 cursor-pointer accent-[var(--color-terracota)]" />
+        Es confidencial: que lo lea solo el equipo de intercesión.
+      </label>
+
+      <button
+        type="submit"
+        class="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-sm bg-[var(--color-terracota)] px-6 py-3 text-sm font-medium tracking-wide text-[var(--color-perola)] transition hover:bg-[var(--color-terracota-deep)] sm:w-auto"
+      >
+        Enviar por WhatsApp
+        <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </button>
+      <p class="mt-3 text-xs text-[var(--color-ink-soft)]">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+    </form>
+  </div>
+</section>
