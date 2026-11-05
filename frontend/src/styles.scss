@@ -32,7 +32,7 @@
 
   --font-heading: "Libre Baskerville", Georgia, serif;
   --font-body: "Jost", system-ui, sans-serif;
-  --font-accent: "Pinyon Script", cursive;
+  --font-accent: "Dancing Script", cursive;
   --font-italic: "Lora", Georgia, serif;
 }
 
@@ -149,5 +149,10 @@ body {
 
 /* Títulos: reparte las líneas para evitar palabras sueltas (Libre Baskerville es ancha). */
 h1, h2, h3 {
+  text-wrap: balance;
+}
+
+/* Subtítulos manuscritos: evita que una sola palabra quede sola en la última línea. */
+[class*="--font-accent"] {
   text-wrap: balance;
 }
