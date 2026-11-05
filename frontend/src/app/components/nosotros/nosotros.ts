@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Historia } from './historia/historia';
-import { Origenes } from './origenes/origenes';
 import { Doctrina } from './doctrina/doctrina';
-import { Presente } from './presente/presente';
+import { VisionMision } from './vision-mision/vision-mision';
+import { Liderazgo } from './liderazgo/liderazgo';
+import { PrimeraVez } from './primera-vez/primera-vez';
 
 @Component({
-  imports: [Historia, Origenes, Doctrina, Presente],
+  imports: [Historia, Doctrina, VisionMision, Liderazgo, PrimeraVez],
   selector: 'app-nosotros',
   styleUrl: './nosotros.scss',
   templateUrl: './nosotros.html',

@@ -1,24 +1,30 @@
-<section id="doctrina" class="scroll-mt-32 bg-[var(--color-neutral)] py-16 sm:py-24">
+<section id="creemos" class="scroll-mt-32 bg-[var(--color-bege)] py-16 sm:py-24">
   <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
-    <div
-      class="grid gap-10 rounded-md bg-[var(--color-green-deep)] p-8 text-[var(--color-cream)] shadow-[0_30px_60px_-24px_rgba(44,40,31,.14)] sm:p-12 lg:grid-cols-[0.9fr_1.4fr]"
-    >
-      <div>
-        <span class="mb-1 block font-[family-name:var(--font-accent)] text-3xl text-[var(--color-wine)]">Doctrina</span>
-        <h2 class="font-[family-name:var(--font-heading)] text-3xl text-[var(--color-cream)] sm:text-4xl">En qué creemos</h2>
-        <p class="mt-3 text-[#cfd9c2]">
-          Nuestra fe se apoya en la Biblia como Palabra de Dios y en las verdades centrales del cristianismo evangélico.
-        </p>
-      </div>
+    <div class="mx-auto mb-12 max-w-[640px] text-center">
+      <span class="mb-1 block font-[family-name:var(--font-accent)] text-4xl text-[var(--color-terracota)]">Qué creemos</span>
+      <h2 class="font-[family-name:var(--font-heading)] text-4xl text-[var(--color-terracota)] sm:text-5xl">En qué creemos</h2>
+      <p class="mt-3 text-[var(--color-ink-soft)]">
+        Nuestra fe se apoya en la Biblia como Palabra de Dios y en las verdades centrales del cristianismo evangélico.
+      </p>
+    </div>
 
-      <div class="grid gap-3">
-        @for (item of beliefs; track item.title) {
-          <div class="rounded border border-[var(--color-cream)]/14 bg-[var(--color-cream)]/6 px-5 py-4">
-            <h3 class="font-[family-name:var(--font-heading)] text-lg font-medium text-[var(--color-cream)]">{{ item.title }}</h3>
-            <p class="mt-1 text-sm text-[#cfd9c2]">{{ item.description }}</p>
-          </div>
-        }
-      </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (item of beliefs; track item.title) {
+        <div class="flex flex-col items-center rounded bg-[var(--color-perola)] px-6 py-8 text-center">
+          <span class="mb-4 flex h-14 w-14 items-center justify-center rounded-full border-[1.5px] border-[var(--color-terracota)]/50 text-[var(--color-terracota)]">
+            <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current stroke-[1.5]" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              @switch (item.icon) {
+                @case ('book') { <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z" /><path d="M8 7.5h8" /> }
+                @case ('cross') { <path d="M12 3v18M7 8h10" /> }
+                @case ('sun') { <circle cx="12" cy="12" r="3.5" /><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" /> }
+                @case ('church') { <path d="M12 3v4M10 5h4M5 21V12l7-5 7 5v9zM10 21v-5h4v5" /> }
+              }
+            </svg>
+          </span>
+          <h3 class="font-[family-name:var(--font-heading)] text-2xl text-[var(--color-terracota)]">{{ item.title }}</h3>
+          <p class="mt-2 text-sm text-[var(--color-ink-soft)]">{{ item.description }}</p>
+        </div>
+      }
     </div>
   </div>
 </section>

@@ -1,0 +1,53 @@
+<section id="primera-vez" class="scroll-mt-32 bg-[var(--color-bege)] py-16 sm:py-24">
+  <div class="mx-auto max-w-[1180px] px-5 sm:px-8">
+    <div class="mx-auto mb-12 max-w-[640px] text-center">
+      <span class="mb-1 block font-[family-name:var(--font-accent)] text-4xl text-[var(--color-terracota)]">Te esperamos</span>
+      <h2 class="font-[family-name:var(--font-heading)] text-4xl text-[var(--color-terracota)] sm:text-5xl">¿Es tu primera vez?</h2>
+      <p class="mt-3 text-[var(--color-ink-soft)]">
+        No hace falta que conozcas a nadie ni que sepas qué esperar. Venís tal cual sos, y alguien te va a recibir.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="rounded bg-[var(--color-perola)] p-7">
+        <h3 class="font-[family-name:var(--font-heading)] text-2xl text-[var(--color-terracota)]">Cuándo venir</h3>
+        <ul class="mt-3 space-y-1.5 text-[var(--color-ink-soft)]">
+          @for (s of content.schedule; track s.day) {
+            <li><strong class="font-medium text-[var(--color-ink)]">{{ s.day }}</strong> · {{ s.time }} hs <span class="text-sm">({{ s.kind }})</span></li>
+          }
+        </ul>
+        <p class="mt-3 text-sm text-[var(--color-ink-soft)]">El domingo es la mejor opción para empezar.</p>
+      </div>
+
+      <div class="rounded bg-[var(--color-perola)] p-7">
+        <h3 class="font-[family-name:var(--font-heading)] text-2xl text-[var(--color-terracota)]">Dónde estamos</h3>
+        <p class="mt-3 text-[var(--color-ink-soft)]">{{ content.address }}</p>
+        <a [href]="content.mapsUrl" target="_blank" rel="noopener" class="mt-3 inline-block cursor-pointer text-sm font-medium text-[var(--color-terracota)] hover:underline">Cómo llegar →</a>
+      </div>
+
+      <div class="rounded bg-[var(--color-perola)] p-7">
+        <h3 class="font-[family-name:var(--font-heading)] text-2xl text-[var(--color-terracota)]">Qué esperar</h3>
+        <p class="mt-3 text-[var(--color-ink-soft)]">
+          Un tiempo de alabanza, oración y enseñanza de la Palabra, en un ambiente cercano. No hay código de vestimenta ni obligación de participar.
+        </p>
+        <p class="mt-3 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-azul)]">Texto provisorio · a confirmar</p>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col items-start gap-5 rounded bg-[var(--color-terracota)] p-7 text-[var(--color-perola)] sm:flex-row sm:items-center sm:justify-between sm:p-9">
+      <div>
+        <h3 class="font-[family-name:var(--font-heading)] text-3xl">¿Querés que alguien te reciba?</h3>
+        <p class="mt-1 max-w-[52ch] text-[var(--color-perola)]/85">Escribinos por WhatsApp y te acompañamos desde que llegás. Vas a poder preguntar lo que quieras antes de venir.</p>
+      </div>
+      <a
+        [href]="whatsappHref"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-sm bg-[var(--color-perola)] px-6 py-3 text-sm font-medium tracking-wide text-[var(--color-terracota)] transition hover:bg-[var(--color-bege)]"
+      >
+        Escribirnos por WhatsApp
+        <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </div>
+</section>
