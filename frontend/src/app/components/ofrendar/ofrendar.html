@@ -1,28 +1,41 @@
 <section
-  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-[radial-gradient(ellipse_70%_90%_at_85%_20%,rgba(244,238,217,.10),transparent_60%),linear-gradient(160deg,var(--color-wine-deep)_0%,var(--color-wine)_60%,#6a2a20_100%)] text-[var(--color-cream)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
+  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-gradient-to-b from-[#d3dcde] via-[var(--color-perola)] to-[var(--color-bege)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
 >
   <div class="mx-auto w-full max-w-[1180px] px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
-    <span class="mb-1 block font-[family-name:var(--font-accent)] text-3xl text-[#e7c9a9]">Sembrar y dar</span>
-    <h1 class="max-w-[22ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
+    <span class="mb-1 block font-[family-name:var(--font-accent)] text-4xl text-[var(--color-terracota)]">Sembrar y dar</span>
+    <h1 class="max-w-[22ch] font-[family-name:var(--font-heading)] text-5xl leading-[1] text-[var(--color-terracota)] sm:text-6xl">
       Apoyá con tu ofrenda
     </h1>
-    <p class="mt-4 max-w-[52ch] font-[family-name:var(--font-heading)] text-lg italic leading-relaxed text-[#f6ecdf]">
+    <p class="mt-4 max-w-[52ch] font-[family-name:var(--font-heading)] text-xl italic leading-relaxed text-[var(--color-ink)]">
       "Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre."
-      <cite class="mt-2 block text-xs not-italic uppercase tracking-[0.06em] text-[#e0b9ab]">2 Corintios 9:7</cite>
+      <cite class="mt-2 block text-xs not-italic font-medium uppercase tracking-[0.22em] text-[var(--color-azul)]">2 Corintios 9:7</cite>
     </p>
   </div>
 </section>
 
-<section class="bg-[var(--color-neutral)] py-16 sm:py-24">
+<!-- Por qué damos -->
+<section class="bg-[var(--color-perola)] pt-16 sm:pt-24">
+  <div class="mx-auto max-w-[760px] px-5 text-center sm:px-8">
+    <span class="mb-1 block font-[family-name:var(--font-accent)] text-4xl text-[var(--color-terracota)]">La importancia de dar</span>
+    <h2 class="font-[family-name:var(--font-heading)] text-4xl text-[var(--color-terracota)] sm:text-5xl">Dar es un acto de fe</h2>
+    <p class="mt-4 text-[var(--color-ink-soft)]">
+      Cada ofrenda sostiene el trabajo de la iglesia: la enseñanza de la Palabra, el cuidado de las familias, los merenderos y la ayuda a quienes más lo necesitan. Damos con alegría, según lo que cada uno propuso en su corazón, agradecidos por todo lo que Dios nos dio primero.
+    </p>
+  </div>
+</section>
+
+<!-- Cómo ofrendar -->
+<section class="bg-[var(--color-perola)] py-12 sm:py-16">
   <div class="mx-auto max-w-[760px] px-5 sm:px-8">
-    <div class="flex flex-wrap gap-3">
+    <h3 class="mb-4 text-center text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-terracota)]">Cómo ofrendar</h3>
+    <div class="flex flex-wrap justify-center gap-3">
       <button
         type="button"
         (click)="elegirMetodo('transferencia')"
         [class]="metodoActivo() === 'transferencia'
-          ? 'bg-[var(--color-wine)] text-[var(--color-cream)]'
-          : 'bg-[var(--color-cream)] text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]'"
-        class="cursor-pointer rounded-sm border border-[var(--color-cream-line)] px-5 py-2.5 text-sm font-semibold transition-colors"
+          ? 'bg-[var(--color-terracota)] text-[var(--color-perola)] border-[var(--color-terracota)]'
+          : 'bg-transparent text-[var(--color-terracota)] border-[var(--color-terracota)]/50 hover:bg-[var(--color-bege)]'"
+        class="cursor-pointer rounded-sm border px-5 py-2.5 text-sm font-medium tracking-wide transition-colors"
       >
         Transferencia bancaria
       </button>
@@ -30,9 +43,9 @@
         type="button"
         (click)="elegirMetodo('tarjeta')"
         [class]="metodoActivo() === 'tarjeta'
-          ? 'bg-[var(--color-wine)] text-[var(--color-cream)]'
-          : 'bg-[var(--color-cream)] text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]'"
-        class="cursor-pointer rounded-sm border border-[var(--color-cream-line)] px-5 py-2.5 text-sm font-semibold transition-colors"
+          ? 'bg-[var(--color-terracota)] text-[var(--color-perola)] border-[var(--color-terracota)]'
+          : 'bg-transparent text-[var(--color-terracota)] border-[var(--color-terracota)]/50 hover:bg-[var(--color-bege)]'"
+        class="cursor-pointer rounded-sm border px-5 py-2.5 text-sm font-medium tracking-wide transition-colors"
       >
         Tarjeta / MercadoPago
       </button>
@@ -40,33 +53,34 @@
         type="button"
         (click)="elegirMetodo('templo')"
         [class]="metodoActivo() === 'templo'
-          ? 'bg-[var(--color-wine)] text-[var(--color-cream)]'
-          : 'bg-[var(--color-cream)] text-[var(--color-ink-soft)] hover:bg-[var(--color-cream-deep)]'"
-        class="cursor-pointer rounded-sm border border-[var(--color-cream-line)] px-5 py-2.5 text-sm font-semibold transition-colors"
+          ? 'bg-[var(--color-terracota)] text-[var(--color-perola)] border-[var(--color-terracota)]'
+          : 'bg-transparent text-[var(--color-terracota)] border-[var(--color-terracota)]/50 hover:bg-[var(--color-bege)]'"
+        class="cursor-pointer rounded-sm border px-5 py-2.5 text-sm font-medium tracking-wide transition-colors"
       >
         En el templo
       </button>
     </div>
 
     @if (metodoActivo() === 'transferencia') {
-      <div class="mt-8 rounded-md border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-7">
-        <h2 class="font-[family-name:var(--font-heading)] text-xl text-[var(--color-wine-deep)]">Datos para transferencia</h2>
+      <div class="mt-8 rounded bg-[var(--color-bege)] p-7">
+        <h2 class="font-[family-name:var(--font-heading)] text-3xl text-[var(--color-terracota)]">Datos para transferencia</h2>
         <p class="mt-1 text-sm text-[var(--color-ink-soft)]">
           Podés ofrendar mediante depósito o transferencia a esta cuenta.
         </p>
         <div class="mt-5 grid gap-4 sm:grid-cols-2">
           @for (dato of datosBancarios; track dato.etiqueta) {
-            <div class="flex items-center justify-between gap-3 rounded-sm border border-[var(--color-cream-line)] bg-[var(--color-neutral)] px-4 py-3">
+            <div class="flex items-center justify-between gap-3 rounded-sm bg-[var(--color-perola)] px-4 py-3">
               <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-ink-soft)]">{{ dato.etiqueta }}</p>
+                <p class="text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-ink-soft)]">{{ dato.etiqueta }}</p>
                 <p class="text-sm text-[var(--color-ink)]">{{ dato.valor }}</p>
               </div>
               <button
                 type="button"
-                disabled
-                class="cursor-not-allowed rounded-sm border border-[var(--color-cream-line)] px-3 py-1.5 text-xs font-semibold text-[var(--color-ink-soft)]/60"
+                (click)="copiar(dato)"
+                [disabled]="esPendiente(dato)"
+                class="rounded-sm border border-[var(--color-terracota)]/50 px-3 py-1.5 text-xs font-medium text-[var(--color-terracota)] transition enabled:cursor-pointer enabled:hover:bg-[var(--color-terracota)] enabled:hover:text-[var(--color-perola)] disabled:cursor-not-allowed disabled:opacity-40"
               >
-                Copiar
+                {{ copiado() === dato.etiqueta ? 'Copiado' : 'Copiar' }}
               </button>
             </div>
           }
@@ -78,10 +92,10 @@
     }
 
     @if (metodoActivo() === 'tarjeta') {
-      <div class="mt-8 rounded-md border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-7">
-        <h2 class="font-[family-name:var(--font-heading)] text-xl text-[var(--color-wine-deep)]">Ofrendar con tarjeta</h2>
+      <div class="mt-8 rounded bg-[var(--color-bege)] p-7">
+        <h2 class="font-[family-name:var(--font-heading)] text-3xl text-[var(--color-terracota)]">Ofrendar con tarjeta</h2>
         <p class="mt-1 text-sm text-[var(--color-ink-soft)]">Pago en línea a través de MercadoPago.</p>
-        <label class="mt-5 block text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-ink-soft)]" for="monto">
+        <label class="mt-5 block text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-ink-soft)]" for="monto">
           Monto (UYU)
         </label>
         <input
@@ -90,12 +104,12 @@
           min="0"
           placeholder="0"
           (input)="onMontoChange($event)"
-          class="mt-2 w-full rounded-sm border border-[var(--color-cream-line)] bg-[var(--color-neutral)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none focus:border-[var(--color-wine)]"
+          class="mt-2 w-full rounded-sm border border-[var(--color-line)] bg-[var(--color-perola)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none focus:border-[var(--color-terracota)]"
         />
         <button
           type="button"
           disabled
-          class="mt-5 w-full cursor-not-allowed rounded-sm bg-[var(--color-wine)]/50 px-6 py-3 text-sm font-semibold text-[var(--color-cream)]"
+          class="mt-5 w-full cursor-not-allowed rounded-sm bg-[var(--color-terracota)]/50 px-6 py-3 text-sm font-medium tracking-wide text-[var(--color-perola)]"
         >
           Ofrendar {{ monto() ? '$' + monto() : '' }}
         </button>
@@ -104,24 +118,25 @@
     }
 
     @if (metodoActivo() === 'templo') {
-      <div class="mt-8 rounded-md border border-[var(--color-cream-line)] bg-[var(--color-cream)] p-7">
-        <h2 class="font-[family-name:var(--font-heading)] text-xl text-[var(--color-wine-deep)]">Ofrendar en el templo</h2>
+      <div class="mt-8 rounded bg-[var(--color-bege)] p-7">
+        <h2 class="font-[family-name:var(--font-heading)] text-3xl text-[var(--color-terracota)]">Ofrendar en el templo</h2>
         <p class="mt-1 text-sm text-[var(--color-ink-soft)]">
           También podés ofrendar en persona durante cualquiera de nuestras reuniones.
         </p>
         <div class="mt-5 grid gap-3">
           @for (item of content.schedule; track item.day) {
-            <div class="flex items-center justify-between rounded-sm border border-[var(--color-cream-line)] bg-[var(--color-neutral)] px-4 py-3 text-sm">
-              <span class="font-semibold text-[var(--color-ink)]">{{ item.day }} · {{ item.kind }}</span>
+            <div class="flex items-center justify-between rounded-sm bg-[var(--color-perola)] px-4 py-3 text-sm">
+              <span class="font-medium text-[var(--color-ink)]">{{ item.day }} · {{ item.kind }}</span>
               <span class="text-[var(--color-ink-soft)]">{{ item.time }}</span>
             </div>
           }
         </div>
+        <p class="mt-4 text-sm text-[var(--color-ink-soft)]">{{ content.address }}</p>
       </div>
     }
 
-    <p class="mt-10 text-center text-sm italic text-[var(--color-ink-soft)]">
-      Dar es también un acto de fe — gracias por sostener el trabajo de la iglesia.
+    <p class="mt-10 text-center font-[family-name:var(--font-heading)] text-xl italic text-[var(--color-ink-soft)]">
+      Gracias por sostener el trabajo de la iglesia.
     </p>
   </div>
 </section>
