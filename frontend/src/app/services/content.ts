@@ -13,6 +13,24 @@ export interface NewsItem {
   body?: string;
 }
 
+export interface ActivityItem {
+  key: string;
+  name: string;
+  audience: string;
+  schedule: string;
+  summary: string;
+  details: string;
+  icon: string;
+  image?: string;
+}
+
+export interface AnnouncementItem {
+  date: string;
+  tag: string;
+  title: string;
+  text: string;
+}
+
 export interface RadioProgram {
   name: string;
   description?: string;
@@ -43,6 +61,63 @@ export class Content {
     { day: 'Domingo', kind: 'Reunión general', time: '10:00' },
     { day: 'Martes', kind: 'Reunión', time: '20:00' },
     { day: 'Jueves', kind: 'Reunión', time: '20:00' },
+  ];
+
+  // Pendiente: reuniones especiales reales (fechas y horarios) que provea la iglesia.
+  readonly specialMeetings: ScheduleItem[] = [
+    { day: 'Convención Nacional', kind: 'Encuentro anual con las congregaciones hermanas', time: 'Fecha a confirmar' },
+    { day: 'Culto de fin de año', kind: 'Agradecimiento y mirada al año que viene', time: 'Fecha a confirmar' },
+  ];
+
+  // Pendiente: horarios, textos y fotos reales de cada actividad.
+  readonly activities: ActivityItem[] = [
+    {
+      key: 'jovenes',
+      name: 'Jóvenes',
+      audience: 'Adolescentes y jóvenes',
+      schedule: 'Horario a confirmar',
+      summary: 'Encuentros de crecimiento, comunidad y liderazgo.',
+      details:
+        'Un espacio para que los adolescentes y jóvenes crezcan en su fe, construyan amistades sanas y descubran sus dones al servicio de Dios.\n\nHay tiempos de alabanza, enseñanza, juegos y salidas. Todos son bienvenidos, vengan de donde vengan.',
+      icon: 'zap',
+    },
+    {
+      key: 'ninos',
+      name: 'Niños',
+      audience: 'Escuelita para los más chicos',
+      schedule: 'Horario a confirmar',
+      summary: 'Escuelita presente en cada anexo, con la Palabra explicada a su medida.',
+      details:
+        'La Escuelita enseña la Palabra de Dios a los más chicos de forma cercana y divertida, con historias, canciones y manualidades.\n\nEstá presente en cada anexo de la iglesia. Mientras tanto, la guardería cuida a los más pequeños durante las reuniones.',
+      icon: 'smile',
+    },
+    {
+      key: 'damas',
+      name: 'Damas',
+      audience: 'Mujeres de la congregación',
+      schedule: 'Horario a confirmar',
+      summary: 'Comunión, crecimiento y servicio entre mujeres.',
+      details:
+        'Un espacio de comunión, oración y crecimiento para las mujeres de la congregación, donde también se organizan actividades de servicio y apoyo a quienes lo necesitan.',
+      icon: 'flower',
+    },
+    {
+      key: 'estudio',
+      name: 'Estudio bíblico',
+      audience: 'Toda la congregación',
+      schedule: 'Martes · a confirmar',
+      summary: 'Un tiempo para profundizar en las Escrituras juntos.',
+      details:
+        'Clases y estudios para conocer mejor la Biblia, a cargo de los maestros de la Palabra. Abierto a quien quiera aprender, sin importar cuánto conozca.\n\nTambién podés acompañar el programa Compartiendo su palabra en el canal de La Huella.',
+      icon: 'book',
+    },
+  ];
+
+  // Pendiente: anuncios reales (cambios de horario, novedades, próximos eventos).
+  readonly announcements: AnnouncementItem[] = [
+    { date: 'Próximamente', tag: 'Evento', title: 'Convención Nacional 2026', text: 'Un tiempo apartado para buscar la dirección de Dios y ser edificados como iglesia.' },
+    { date: 'Ejemplo', tag: 'Aviso', title: 'Cambio de horario', text: 'Acá se publicarán los cambios de horario de reuniones y actividades.' },
+    { date: 'Ejemplo', tag: 'Novedad', title: 'Nueva actividad', text: 'Acá se avisarán las novedades y los próximos encuentros de la iglesia.' },
   ];
 
   readonly news: NewsItem[] = [

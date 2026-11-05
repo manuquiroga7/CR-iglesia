@@ -27,6 +27,7 @@ export class Nav {
   protected readonly mobileLinks: NavLink[] = [
     { label: 'Inicio', href: '/' },
     { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Actividades', href: '/actividades' },
     { label: 'Anexos', href: '/anexos' },
     { label: 'Noticias', href: '/#noticias', fragment: 'noticias' },
     { label: 'Ministerios', href: '/ministerios' },

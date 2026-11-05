@@ -5,6 +5,7 @@ import { Anexos } from './components/anexos/anexos';
 import { Ofrendar } from './components/ofrendar/ofrendar';
 import { MinisteriosPage } from './components/ministerios/ministerios-page';
 import { LaHuella } from './components/la-huella/la-huella';
+import { ActividadesPage } from './components/actividades/actividades-page';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -13,4 +14,5 @@ export const routes: Routes = [
   { path: 'ofrendar', component: Ofrendar },
   { path: 'ministerios', component: MinisteriosPage },
   { path: 'la-huella', component: LaHuella },
+  { path: 'actividades', component: ActividadesPage },
 ];
