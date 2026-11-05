@@ -43,70 +43,19 @@
     </button>
 
     <nav class="hidden items-center gap-6 xl:flex">
-      <a
-        href="/"
-        class="relative py-1 text-sm font-semibold transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--color-wine)] after:content-['']"
-        [class]="scrolled() ? 'text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]'"
-      >
-        Inicio
-      </a>
-      <a
-        href="/nosotros"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Nosotros
-      </a>
-      <a
-        href="/actividades"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Actividades
-      </a>
-      <a
-        href="/anexos"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Anexos
-      </a>
-      <a
-        routerLink="/"
-        fragment="noticias"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Noticias
-      </a>
-      <a
-        href="/ministerios"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Ministerios
-      </a>
-      <a
-        href="/mensajes"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Mensajes
-      </a>
-      <a
-        href="/galeria"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Galería
-      </a>
-      <a
-        href="/contacto"
-        class="py-1 text-sm font-semibold transition-colors duration-300"
-        [class]="scrolled() ? 'text-[var(--color-ink-soft)] hover:text-[var(--color-green-deep)]' : 'text-[var(--color-cream)]/85 hover:text-[var(--color-cream)]'"
-      >
-        Contacto
-      </a>
+      @for (link of desktopLinks; track link.label) {
+        <a
+          [routerLink]="link.path"
+          [fragment]="link.fragment"
+          [attr.aria-current]="isActive(link) ? 'page' : null"
+          class="relative cursor-pointer py-1 text-sm font-semibold transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:origin-left after:transition-transform after:duration-300 after:content-['']"
+          [class]="isActive(link)
+            ? 'text-[var(--color-terracota)] after:bg-[var(--color-terracota)] after:[transform:scaleX(1)]'
+            : 'text-[var(--color-ink-soft)] after:bg-[var(--color-terracota)] after:[transform:scaleX(0)] hover:text-[var(--color-terracota)] hover:after:[transform:scaleX(1)]'"
+        >
+          {{ link.label }}
+        </a>
+      }
       <a
         href="/ofrendar"
         class="rounded-sm border-[1.5px] px-5 py-2 text-sm font-semibold transition-colors duration-300"
@@ -142,7 +91,7 @@
                 (click)="closeMobileMenu()"
                 [href]="link.href"
                 class="flex items-center justify-between py-4 text-base font-semibold transition-colors"
-                [class]="link.href === currentPath
+                [class]="link.href === currentPath()
                   ? 'text-[var(--color-wine)]'
                   : 'text-[var(--color-green-deep)] hover:text-[var(--color-wine)]'"
               >
