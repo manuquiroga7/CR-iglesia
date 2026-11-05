@@ -1,15 +1,15 @@
 <section
-  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
+  class="relative flex min-h-[42vh] flex-col justify-end overflow-hidden bg-gradient-to-b from-[#d3dcde] via-[var(--color-perola)] to-[var(--color-bege)] sm:[border-bottom-left-radius:50%_3rem] sm:[border-bottom-right-radius:50%_3rem]"
 >
   <div class="mx-auto w-full max-w-[1180px] px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
-    <div class="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
-      <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
+    <div class="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-terracota)]">
+      <span class="inline-block h-px w-6 bg-[var(--color-terracota)]"></span>
       Cristo es la Respuesta
     </div>
-    <h1 class="max-w-[20ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-5xl">
+    <h1 class="max-w-[20ch] font-[family-name:var(--font-heading)] text-5xl leading-[1] text-[var(--color-terracota)] sm:text-6xl">
       Nuestros ministerios
     </h1>
-    <p class="mt-4 max-w-[52ch] text-lg text-[#d9dfcd]">
+    <p class="mt-4 max-w-[52ch] text-lg text-[var(--color-ink-soft)]">
       Cada servicio es una oportunidad de poner los dones al servicio de Dios y de los demás. Hay un lugar para vos.
     </p>
   </div>
@@ -23,9 +23,9 @@
           @if (item.image) {
             <img [src]="item.image" [alt]="'Foto del ministerio ' + item.name" loading="lazy" class="aspect-[16/10] w-full object-cover transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)]" />
           } @else {
-            <div class="relative flex aspect-[16/10] items-center justify-center transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)] bg-[radial-gradient(ellipse_80%_60%_at_15%_-10%,rgba(124,143,108,.35),transparent_60%),linear-gradient(165deg,var(--color-green-deep)_0%,#2f4527_45%,#26361f_100%)] text-[var(--color-cream)]/45">
+            <div class="relative flex aspect-[16/10] items-center justify-center transition duration-200 [transform:scale(1)] group-hover:[transform:scale(1.06)] bg-gradient-to-br from-[var(--color-azul)] to-[var(--color-verde)] text-[var(--color-perola)]">
               <app-ministry-icon [name]="item.icon" class="[&_svg]:h-9 [&_svg]:w-9 sm:[&_svg]:h-14 sm:[&_svg]:w-14" />
-              <span class="absolute bottom-2 left-3 text-[0.5rem] font-semibold uppercase tracking-[0.1em] sm:bottom-3 sm:left-4 sm:text-[0.65rem] sm:tracking-[0.14em] text-[#cfd9c2]/70">Foto próximamente</span>
+              <span class="absolute bottom-2 left-3 text-[0.5rem] font-semibold uppercase tracking-[0.1em] sm:bottom-3 sm:left-4 sm:text-[0.65rem] sm:tracking-[0.14em] text-[var(--color-perola)]">Foto próximamente</span>
             </div>
           }
           <div class="flex flex-1 flex-col gap-1.5 p-3.5 sm:gap-2 sm:p-6">

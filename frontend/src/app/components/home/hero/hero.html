@@ -82,7 +82,7 @@
                   }
                 </svg>
               </span>
-              <span class="text-[0.58rem] font-medium uppercase tracking-[0.06em] text-[var(--color-ink)] sm:text-xs sm:tracking-[0.14em]">{{ a.label }}</span>
+              <span class="text-[0.65rem] font-medium uppercase tracking-[0.03em] text-[var(--color-ink)] sm:text-xs sm:tracking-[0.14em]">{{ a.label }}</span>
             </a>
           }
         </nav>
@@ -96,14 +96,14 @@
       <div class="relative z-10 mx-auto grid w-full max-w-[1180px] flex-1 items-center gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.1fr_.9fr]">
         <div>
           <img src="/images/hero/lahuella.png" alt="La Huella Online" class="h-16 w-16 opacity-90" />
-          <div class="mb-4 mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#cfd9c2]">
+          <div class="mb-4 mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-bege)]">
             <span class="inline-block h-px w-6 bg-[var(--color-wine)]"></span>
             La Huella Online · "Una radio con identidad"
           </div>
           <h1 class="max-w-[20ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] text-[var(--color-cream)] sm:text-6xl">
-            Dejando una <i class="italic text-[#e7c9a9]">huella</i> más allá
+            Dejando una <i class="italic text-[var(--color-bege)]">huella</i> más allá
           </h1>
-          <p class="mt-4 max-w-[46ch] text-lg text-[#d9dfcd]">
+          <p class="mt-4 max-w-[46ch] text-lg text-[var(--color-perola)]/85">
             Nació como programa de radio y hoy es nuestra principal plataforma digital: desde el estudio producimos programas de jóvenes, adolescentes, estudio bíblico y más — además de las transmisiones en vivo — para edificar a quienes nos ven cada semana.
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
@@ -171,7 +171,7 @@
       <button
         (click)="goTo(i)"
         [attr.aria-label]="'Ir al slide ' + (i + 1)"
-        [class]="current() === i ? 'h-2 w-6 rounded-full bg-current transition-all' : 'h-2 w-2 rounded-full bg-current opacity-40 transition-all hover:opacity-70'"
+        [class]="current() === i ? 'relative h-2 w-6 rounded-full bg-current transition-all before:absolute before:-inset-3' : 'relative h-2 w-2 rounded-full bg-current opacity-40 transition-all before:absolute before:-inset-3 hover:opacity-70'"
       ></button>
     }
   </div>

@@ -57,8 +57,8 @@
           (click)="goTo($index)"
           [attr.aria-label]="'Ir a la página ' + ($index + 1)"
           [class]="currentPage() === $index
-            ? 'h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all'
-            : 'h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all hover:bg-[var(--color-green)]'"
+            ? 'relative h-2 w-6 rounded-full bg-[var(--color-green-deep)] transition-all before:absolute before:-inset-3'
+            : 'relative h-2 w-2 rounded-full bg-[var(--color-cream-line)] transition-all before:absolute before:-inset-3 hover:bg-[var(--color-green)]'"
         ></button>
       }
     </div>
